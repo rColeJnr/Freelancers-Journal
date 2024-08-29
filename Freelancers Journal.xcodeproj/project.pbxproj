@@ -9,21 +9,41 @@
 /* Begin PBXBuildFile section */
 		750E3DB92C808EE900D0E9DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750E3DB82C808EE900D0E9DD /* AppDelegate.swift */; };
 		750E3DBB2C808EE900D0E9DD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750E3DBA2C808EE900D0E9DD /* SceneDelegate.swift */; };
-		750E3DBD2C808EE900D0E9DD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750E3DBC2C808EE900D0E9DD /* ViewController.swift */; };
-		750E3DC02C808EE900D0E9DD /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 750E3DBF2C808EE900D0E9DD /* Base */; };
 		750E3DC22C808EEA00D0E9DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 750E3DC12C808EEA00D0E9DD /* Assets.xcassets */; };
 		750E3DC52C808EEA00D0E9DD /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 750E3DC42C808EEA00D0E9DD /* Base */; };
+		750E3DD02C80955500D0E9DD /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750E3DCF2C80955500D0E9DD /* OnboardingViewController.swift */; };
+		750E3DD32C809BC500D0E9DD /* FjCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 750E3DD12C809BC500D0E9DD /* FjCoreData.xcdatamodeld */; };
+		750E3DD72C809BE300D0E9DD /* FjExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750E3DD62C809BE300D0E9DD /* FjExtensions.swift */; };
+		750E3DD92C809C4B00D0E9DD /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750E3DD82C809C4B00D0E9DD /* OnboardingView.swift */; };
+		750E3DDB2C809C8000D0E9DD /* FjIsNewUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750E3DDA2C809C8000D0E9DD /* FjIsNewUser.swift */; };
+		750E3DDE2C809D8200D0E9DD /* FjTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750E3DDD2C809D8200D0E9DD /* FjTabBarController.swift */; };
+		750E3DE32C809ED300D0E9DD /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750E3DE22C809ED300D0E9DD /* SettingsViewController.swift */; };
+		750E3DE52C809EDC00D0E9DD /* ClientsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750E3DE42C809EDC00D0E9DD /* ClientsViewController.swift */; };
+		750E3DE72C809EE500D0E9DD /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750E3DE62C809EE500D0E9DD /* StatisticsViewController.swift */; };
+		750E3DE92C809EEF00D0E9DD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750E3DE82C809EEF00D0E9DD /* HomeViewController.swift */; };
+		750E3DEB2C80A2E100D0E9DD /* FirstOnboardingViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750E3DEA2C80A2E100D0E9DD /* FirstOnboardingViewCell.swift */; };
+		750E3DED2C80A7E700D0E9DD /* SecondOnboardingViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750E3DEC2C80A7E700D0E9DD /* SecondOnboardingViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		750E3DB52C808EE900D0E9DD /* Freelancers Journal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Freelancers Journal.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		750E3DB82C808EE900D0E9DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		750E3DBA2C808EE900D0E9DD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		750E3DBC2C808EE900D0E9DD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		750E3DBF2C808EE900D0E9DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		750E3DC12C808EEA00D0E9DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		750E3DC42C808EEA00D0E9DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		750E3DC62C808EEA00D0E9DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		750E3DCF2C80955500D0E9DD /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		750E3DD22C809BC500D0E9DD /* FjCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FjCoreData.xcdatamodel; sourceTree = "<group>"; };
+		750E3DD62C809BE300D0E9DD /* FjExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FjExtensions.swift; sourceTree = "<group>"; };
+		750E3DD82C809C4B00D0E9DD /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		750E3DDA2C809C8000D0E9DD /* FjIsNewUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FjIsNewUser.swift; sourceTree = "<group>"; };
+		750E3DDD2C809D8200D0E9DD /* FjTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FjTabBarController.swift; sourceTree = "<group>"; };
+		750E3DE22C809ED300D0E9DD /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		750E3DE42C809EDC00D0E9DD /* ClientsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientsViewController.swift; sourceTree = "<group>"; };
+		750E3DE62C809EE500D0E9DD /* StatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
+		750E3DE82C809EEF00D0E9DD /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		750E3DEA2C80A2E100D0E9DD /* FirstOnboardingViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstOnboardingViewCell.swift; sourceTree = "<group>"; };
+		750E3DEC2C80A7E700D0E9DD /* SecondOnboardingViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondOnboardingViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +76,89 @@
 		750E3DB72C808EE900D0E9DD /* Freelancers Journal */ = {
 			isa = PBXGroup;
 			children = (
+				750E3DE12C809EC500D0E9DD /* Settings */,
+				750E3DE02C809EBD00D0E9DD /* Clients */,
+				750E3DDF2C809EB200D0E9DD /* Statistics */,
+				750E3DDC2C809D7600D0E9DD /* Application */,
+				750E3DD42C809BC900D0E9DD /* Common */,
+				750E3DCD2C808F2C00D0E9DD /* Home */,
+				750E3DCC2C808F0E00D0E9DD /* Onboarding */,
 				750E3DB82C808EE900D0E9DD /* AppDelegate.swift */,
 				750E3DBA2C808EE900D0E9DD /* SceneDelegate.swift */,
-				750E3DBC2C808EE900D0E9DD /* ViewController.swift */,
-				750E3DBE2C808EE900D0E9DD /* Main.storyboard */,
 				750E3DC12C808EEA00D0E9DD /* Assets.xcassets */,
 				750E3DC32C808EEA00D0E9DD /* LaunchScreen.storyboard */,
 				750E3DC62C808EEA00D0E9DD /* Info.plist */,
+				750E3DD12C809BC500D0E9DD /* FjCoreData.xcdatamodeld */,
 			);
 			path = "Freelancers Journal";
+			sourceTree = "<group>";
+		};
+		750E3DCC2C808F0E00D0E9DD /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				750E3DCF2C80955500D0E9DD /* OnboardingViewController.swift */,
+				750E3DD82C809C4B00D0E9DD /* OnboardingView.swift */,
+				750E3DEA2C80A2E100D0E9DD /* FirstOnboardingViewCell.swift */,
+				750E3DEC2C80A7E700D0E9DD /* SecondOnboardingViewCell.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		750E3DCD2C808F2C00D0E9DD /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				750E3DCE2C808F4600D0E9DD /* View */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		750E3DCE2C808F4600D0E9DD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				750E3DE82C809EEF00D0E9DD /* HomeViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		750E3DD42C809BC900D0E9DD /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				750E3DD62C809BE300D0E9DD /* FjExtensions.swift */,
+				750E3DDA2C809C8000D0E9DD /* FjIsNewUser.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		750E3DDC2C809D7600D0E9DD /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				750E3DDD2C809D8200D0E9DD /* FjTabBarController.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		750E3DDF2C809EB200D0E9DD /* Statistics */ = {
+			isa = PBXGroup;
+			children = (
+				750E3DE62C809EE500D0E9DD /* StatisticsViewController.swift */,
+			);
+			path = Statistics;
+			sourceTree = "<group>";
+		};
+		750E3DE02C809EBD00D0E9DD /* Clients */ = {
+			isa = PBXGroup;
+			children = (
+				750E3DE42C809EDC00D0E9DD /* ClientsViewController.swift */,
+			);
+			path = Clients;
+			sourceTree = "<group>";
+		};
+		750E3DE12C809EC500D0E9DD /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				750E3DE22C809ED300D0E9DD /* SettingsViewController.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,7 +221,6 @@
 			files = (
 				750E3DC22C808EEA00D0E9DD /* Assets.xcassets in Resources */,
 				750E3DC52C808EEA00D0E9DD /* Base in Resources */,
-				750E3DC02C808EE900D0E9DD /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,23 +231,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				750E3DBD2C808EE900D0E9DD /* ViewController.swift in Sources */,
 				750E3DB92C808EE900D0E9DD /* AppDelegate.swift in Sources */,
+				750E3DD02C80955500D0E9DD /* OnboardingViewController.swift in Sources */,
+				750E3DD72C809BE300D0E9DD /* FjExtensions.swift in Sources */,
+				750E3DE52C809EDC00D0E9DD /* ClientsViewController.swift in Sources */,
+				750E3DEB2C80A2E100D0E9DD /* FirstOnboardingViewCell.swift in Sources */,
+				750E3DDE2C809D8200D0E9DD /* FjTabBarController.swift in Sources */,
+				750E3DE72C809EE500D0E9DD /* StatisticsViewController.swift in Sources */,
+				750E3DD92C809C4B00D0E9DD /* OnboardingView.swift in Sources */,
+				750E3DD32C809BC500D0E9DD /* FjCoreData.xcdatamodeld in Sources */,
+				750E3DED2C80A7E700D0E9DD /* SecondOnboardingViewCell.swift in Sources */,
 				750E3DBB2C808EE900D0E9DD /* SceneDelegate.swift in Sources */,
+				750E3DDB2C809C8000D0E9DD /* FjIsNewUser.swift in Sources */,
+				750E3DE32C809ED300D0E9DD /* SettingsViewController.swift in Sources */,
+				750E3DE92C809EEF00D0E9DD /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		750E3DBE2C808EE900D0E9DD /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				750E3DBF2C808EE900D0E9DD /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		750E3DC32C808EEA00D0E9DD /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -297,7 +393,6 @@
 				INFOPLIST_FILE = "Freelancers Journal/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -307,9 +402,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.rick.Freelancers-Journal";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -325,7 +424,6 @@
 				INFOPLIST_FILE = "Freelancers Journal/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -335,9 +433,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.rick.Freelancers-Journal";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -363,6 +465,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		750E3DD12C809BC500D0E9DD /* FjCoreData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				750E3DD22C809BC500D0E9DD /* FjCoreData.xcdatamodel */,
+			);
+			currentVersion = 750E3DD22C809BC500D0E9DD /* FjCoreData.xcdatamodel */;
+			name = FjCoreData.xcdatamodeld;
+			path = "/Users/rcolejnr/xCodeProjects/Freelancers Journal/Freelancers Journal/FjCoreData.xcdatamodeld";
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 750E3DAD2C808EE900D0E9DD /* Project object */;
 }
