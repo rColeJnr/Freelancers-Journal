@@ -7,9 +7,14 @@
 
 import UIKit
 
+protocol ClientViewDelegate {
+    func navigateToCreateClient()
+}
+
 class ClientView: UIView {
     
     var clients: [Client] = []
+    var delegate: ClientViewDelegate?
     
     // MARK: - VIEWS
     let image = {
@@ -42,6 +47,7 @@ class ClientView: UIView {
     let createNewBtn = {
         let view = UIImageView()
         view.image = UIImage( named: "circle_add_btn")
+        view.isUserInteractionEnabled = true
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -52,15 +58,20 @@ class ClientView: UIView {
         layout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
         let view = UICollectionView(frame: .zero, collectionViewLayout: layout)
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.register(HomeViewCell.self, forCellWithReuseIdentifier: HomeViewCell.cellIdentifier)
+        view.register(ClientViewCell.self, forCellWithReuseIdentifier: ClientViewCell.cellIdentifier)
         view.isHidden = true
         return view
     }()
+    
+    @objc private func onCreateNewBtnClick(_ sender: Any) {
+        delegate?.navigateToCreateClient()
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         translatesAutoresizingMaskIntoConstraints = false
         addSubviews(image, title, descriptionTV, createNewBtn, collectionView)
+        createNewBtn.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onCreateNewBtnClick(_ :))))
         addConstraints()
     }
     
@@ -72,7 +83,7 @@ class ClientView: UIView {
         NSLayoutConstraint.activate([
             createNewBtn.heightAnchor.constraint(equalToConstant: 70),
             createNewBtn.widthAnchor.constraint(equalToConstant: 70),
-            createNewBtn.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 140),
+            createNewBtn.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -100),
             createNewBtn.centerXAnchor.constraint(equalTo: centerXAnchor),
             
             collectionView.topAnchor.constraint(equalTo: topAnchor),
@@ -82,7 +93,7 @@ class ClientView: UIView {
             
             descriptionTV.heightAnchor.constraint(equalToConstant: 15),
             descriptionTV.centerXAnchor.constraint(equalTo: centerXAnchor),
-            descriptionTV.bottomAnchor.constraint(equalTo: createNewBtn.topAnchor, constant: -70),
+            descriptionTV.bottomAnchor.constraint(equalTo: createNewBtn.topAnchor, constant: -90),
             
             title.heightAnchor.constraint(equalToConstant: 30),
             title.centerXAnchor.constraint(equalTo: centerXAnchor),

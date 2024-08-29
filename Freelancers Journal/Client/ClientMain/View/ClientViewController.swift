@@ -1,5 +1,5 @@
 //
-//  ClientCreateViewController.swift
+//  ClientsViewController.swift
 //  Freelancers Journal
 //
 //  Created by rColeJnr on 29/08/24.
@@ -7,19 +7,20 @@
 
 import UIKit
 
-protocol ClientCreateViewProtocol: AnyObject {
-    var presenter: ClientCreatePresenterProtocol? { get set }
+protocol ClientViewProtocol: AnyObject {
+    var presenter: ClientPresenterProtocol? { get set }
 }
 
-class ClientCreateViewController: UIViewController, ClientCreateViewProtocol {
+class ClientViewController: UIViewController, ClientViewProtocol, ClientViewDelegate {
     
-    private let clientCreateView = ClientCreateView()
-    var presenter: ClientCreatePresenterProtocol?
+    private let clientView = ClientView()
+    var presenter: ClientPresenterProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemCyan
-        setupView(clientCreateView)
+        clientView.delegate = self
+        setupView(clientView)
         addDoneButton()
     }
     
@@ -30,5 +31,8 @@ class ClientCreateViewController: UIViewController, ClientCreateViewProtocol {
     @objc private func completeProjectCreation(_ sender : Any) {
         navigationController?.popToRootViewController(animated: true)
     }
+    
+    func navigateToCreateClient() {
+        presenter?.router?.createClientModule(from: self)
+    }
 }
-

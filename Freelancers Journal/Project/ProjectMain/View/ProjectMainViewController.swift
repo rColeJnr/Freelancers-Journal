@@ -7,14 +7,29 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+protocol ProjectMainViewProtocol: AnyObject {
+    var presenter: ProjectMainPresenterProtocol? { get set }
+    func showProjects()
+}
+
+class ProjectMainViewController: UIViewController, ProjectMainViewProtocol, ProjectMainViewDelegate {
     
-    private let homeView = HomeView()
+    var presenter: ProjectMainPresenterProtocol?
+    private let projectMainView = ProjectMainView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemBackground
-        title = "Home"
-        setupView(homeView)
+        view.backgroundColor = .systemCyan
+        projectMainView.delegate = self
+        setupView(projectMainView)
+        presenter?.viewDidLoad()
+    }
+    
+    func showProjects() {
+        // show projects
+    }
+    
+    func navigateToCreateProject() {
+        presenter?.router?.createProjectCreateModule(from: self)
     }
 }

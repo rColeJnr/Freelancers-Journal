@@ -22,9 +22,11 @@ class ClientCreateView: UIView {
     let nameTF = {
         let view = UITextField()
         view.font = .systemFont(ofSize: 20, weight: .medium)
+        view.backgroundColor = .systemBlue
         view.textColor = .white
         view.textAlignment = .left
         view.layer.cornerRadius = 15
+        view.keyboardType = .namePhonePad
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -43,6 +45,7 @@ class ClientCreateView: UIView {
         let view = UITextView()
         view.isEditable = true
         view.font = .systemFont(ofSize: 20, weight: .medium)
+        view.backgroundColor = .systemBlue
         view.textColor = .white
         view.textAlignment = .left
         view.layer.cornerRadius = 15
@@ -50,9 +53,9 @@ class ClientCreateView: UIView {
         return view
     }()
     
-    let deadlineLabel = {
+    let phoneLabel = {
         let view = UILabel()
-        view.text = "Deadline"
+        view.text = "Phone number"
         view.font = .systemFont(ofSize: 24, weight: .bold)
         view.textColor = .white
         view.textAlignment = .left
@@ -60,21 +63,21 @@ class ClientCreateView: UIView {
         return view
     }()
     
-    let deadlineTV = {
-        let view = UITextView()
-        view.isEditable = false
-        view.isUserInteractionEnabled = true
+    let phoneTV = {
+        let view = UITextField()
         view.font = .systemFont(ofSize: 20, weight: .medium)
+        view.backgroundColor = .systemBlue
         view.textColor = .white
         view.textAlignment = .left
+        view.keyboardType = .phonePad
         view.layer.cornerRadius = 15
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
-    let priorityLabel = {
+    let emailLabel = {
         let view = UILabel()
-        view.text = "Priority"
+        view.text = "E-mail"
         view.font = .systemFont(ofSize: 24, weight: .bold)
         view.textColor = .white
         view.textAlignment = .left
@@ -82,43 +85,31 @@ class ClientCreateView: UIView {
         return view
     }()
     
-    let priorityYesBtn = {
+    let emailTV = {
+        let view = UITextField()
+        view.font = .systemFont(ofSize: 20, weight: .medium)
+        view.backgroundColor = .systemBlue
+        view.textColor = .white
+        view.textAlignment = .left
+        view.keyboardType = .emailAddress
+        view.layer.cornerRadius = 15
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+      
+    let regularLabel = {
+        let view = UILabel()
+        view.text = "A regular customer"
+        view.font = .systemFont(ofSize: 24, weight: .bold)
+        view.textColor = .white
+        view.textAlignment = .left
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    let regularYesBtn = {
         var viewConfig = UIButton.Configuration.bordered()
         viewConfig.title = "Yes"
-        viewConfig.baseBackgroundColor = .systemRed
-        viewConfig.baseForegroundColor = .white
-        let view = UIButton(configuration: viewConfig)
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.isUserInteractionEnabled = true
-        view.layer.cornerRadius = 15
-        return view
-    }()
-        
-    let priorityNoBtn = {
-        var viewConfig = UIButton.Configuration.bordered()
-        viewConfig.title = "No"
-        viewConfig.baseBackgroundColor = .systemRed
-        viewConfig.baseForegroundColor = .white
-        let view = UIButton(configuration: viewConfig)
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.isUserInteractionEnabled = true
-        view.layer.cornerRadius = 15
-        return view
-    }()
-    
-    let difficultyLabel = {
-        let view = UILabel()
-        view.text = "Difficulty of execution"
-        view.font = .systemFont(ofSize: 24, weight: .bold)
-        view.textColor = .white
-        view.textAlignment = .left
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
-    
-    let diffEasyBtn = {
-        var viewConfig = UIButton.Configuration.bordered()
-        viewConfig.title = "Easy"
         viewConfig.baseBackgroundColor = .systemGreen
         viewConfig.baseForegroundColor = .white
         let view = UIButton(configuration: viewConfig)
@@ -128,23 +119,10 @@ class ClientCreateView: UIView {
         return view
     }()
         
-    let diffMediumBtn = {
+    let regularNoBtn = {
         var viewConfig = UIButton.Configuration.bordered()
-        viewConfig.title = "Medium"
+        viewConfig.title = "No"
         viewConfig.baseBackgroundColor = .systemOrange
-        viewConfig.baseForegroundColor = .white
-        let view = UIButton(configuration: viewConfig)
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.isUserInteractionEnabled = true
-        view.layer.cornerRadius = 15
-        return view
-    }()
-    
-        
-    let diffHardBtn = {
-        var viewConfig = UIButton.Configuration.bordered()
-        viewConfig.title = "Hard"
-        viewConfig.baseBackgroundColor = .systemRed
         viewConfig.baseForegroundColor = .white
         let view = UIButton(configuration: viewConfig)
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -156,7 +134,7 @@ class ClientCreateView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         translatesAutoresizingMaskIntoConstraints = false
-        addSubviews(nameLabel, nameTF, descriptionLabel, descritionTV, deadlineLabel, deadlineTV, priorityLabel, priorityYesBtn, priorityNoBtn, difficultyLabel, diffEasyBtn, diffMediumBtn, diffEasyBtn)
+        addSubviews(nameLabel, nameTF, descriptionLabel, descritionTV, phoneLabel, phoneTV, emailLabel, emailTV, regularLabel, regularNoBtn, regularYesBtn)
         addConstraints()
     }
     
@@ -166,65 +144,57 @@ class ClientCreateView: UIView {
     
     private func addConstraints() {
         NSLayoutConstraint.activate([
-            diffEasyBtn.heightAnchor.constraint(equalToConstant: 50),
-            diffEasyBtn.widthAnchor.constraint(equalToConstant: 100),
-            diffEasyBtn.leadingAnchor.constraint(equalTo: leadingAnchor),
-            diffEasyBtn.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -15),
-                
-            diffMediumBtn.heightAnchor.constraint(equalToConstant: 50),
-            diffMediumBtn.widthAnchor.constraint(equalToConstant: 100),
-            diffMediumBtn.centerXAnchor.constraint(equalTo: centerXAnchor),
-            diffMediumBtn.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -15),
+            regularYesBtn.heightAnchor.constraint(equalToConstant: 50),
+            regularYesBtn.widthAnchor.constraint(equalToConstant: 170),
+            regularYesBtn.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            regularYesBtn.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20),
             
-            diffHardBtn.heightAnchor.constraint(equalToConstant: 50),
-            diffHardBtn.widthAnchor.constraint(equalToConstant: 100),
-            diffHardBtn.trailingAnchor.constraint(equalTo: trailingAnchor),
-            diffHardBtn.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -15),
+            regularNoBtn.heightAnchor.constraint(equalToConstant: 50),
+            regularNoBtn.widthAnchor.constraint(equalToConstant: 170),
+            regularNoBtn.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
+            regularNoBtn.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20),
             
-            difficultyLabel.heightAnchor.constraint(equalToConstant: 30),
-            difficultyLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
-            difficultyLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
-            difficultyLabel.bottomAnchor.constraint(equalTo: diffEasyBtn.topAnchor, constant: -5),
+            regularLabel.heightAnchor.constraint(equalToConstant: 30),
+            regularLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            regularLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
+            regularLabel.bottomAnchor.constraint(equalTo: regularYesBtn.topAnchor, constant: -20),
             
-            priorityYesBtn.heightAnchor.constraint(equalToConstant: 50),
-            priorityYesBtn.widthAnchor.constraint(equalToConstant: 150),
-            priorityYesBtn.bottomAnchor.constraint(equalTo: difficultyLabel.topAnchor, constant: -10),
-            priorityYesBtn.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
+            emailTV.heightAnchor.constraint(equalToConstant: 60),
+            emailTV.bottomAnchor.constraint(equalTo: regularLabel.topAnchor, constant: -20),
+            emailTV.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
+            emailTV.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             
-            priorityNoBtn.heightAnchor.constraint(equalToConstant: 50),
-            priorityNoBtn.widthAnchor.constraint(equalToConstant: 150),
-            priorityNoBtn.bottomAnchor.constraint(equalTo: difficultyLabel.topAnchor, constant: -10),
-            priorityNoBtn.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
+            emailLabel.heightAnchor.constraint(equalToConstant: 30),
+            emailLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            emailLabel.bottomAnchor.constraint(equalTo: emailTV.topAnchor, constant: -10),
             
-            priorityLabel.heightAnchor.constraint(equalToConstant: 30),
-            priorityLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
-            priorityLabel.bottomAnchor.constraint(equalTo: priorityYesBtn.topAnchor, constant: -5),
+            phoneTV.heightAnchor.constraint(equalToConstant: 60),
+            phoneTV.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            phoneTV.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
+            phoneTV.bottomAnchor.constraint(equalTo: emailLabel.topAnchor, constant: -20),
             
-            deadlineTV.heightAnchor.constraint(equalToConstant: 50),
-            deadlineTV.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
-            deadlineTV.bottomAnchor.constraint(equalTo: priorityLabel.topAnchor, constant: -10),
+            phoneLabel.heightAnchor.constraint(equalToConstant: 30),
+            phoneLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            phoneLabel.bottomAnchor.constraint(equalTo: phoneTV.topAnchor, constant: -10),
             
-            deadlineLabel.heightAnchor.constraint(equalToConstant: 30),
-            deadlineLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
-            deadlineLabel.bottomAnchor.constraint(equalTo: deadlineTV.topAnchor, constant: -5),
-            
-            descritionTV.heightAnchor.constraint(equalToConstant: 50),
-            descritionTV.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
-            descritionTV.bottomAnchor.constraint(equalTo: deadlineLabel.topAnchor, constant: -10),
+            descritionTV.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            descritionTV.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
+            descritionTV.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: -20),
+            descritionTV.bottomAnchor.constraint(equalTo: phoneLabel.topAnchor, constant: -20),
             
             descriptionLabel.heightAnchor.constraint(equalToConstant: 100),
-            descriptionLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
-            descriptionLabel.bottomAnchor.constraint(equalTo: descritionTV.topAnchor, constant: -5),
+            descriptionLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            descriptionLabel.topAnchor.constraint(equalTo: nameTF.bottomAnchor, constant: -20),
             
-            nameTF.heightAnchor.constraint(equalToConstant: 50),
-            nameTF.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
-            nameTF.bottomAnchor.constraint(equalTo: priorityLabel.topAnchor, constant: -10),
+            nameTF.heightAnchor.constraint(equalToConstant: 60),
+            nameTF.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            nameTF.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
+            nameTF.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 10),
             
             nameLabel.heightAnchor.constraint(equalToConstant: 30),
-            nameLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
-            nameLabel.bottomAnchor.constraint(equalTo: nameTF.topAnchor, constant: -5),
+            nameLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            nameLabel.topAnchor.constraint(equalTo: topAnchor, constant: 10),
             
         ])
     }
-    
 }

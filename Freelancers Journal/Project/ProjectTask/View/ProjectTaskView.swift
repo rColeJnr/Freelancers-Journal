@@ -23,9 +23,9 @@ class ProjectTaskView: UIView {
         layout.scrollDirection = .vertical
         layout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
         let view = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        view.backgroundColor = .systemCyan
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.register(HomeViewCell.self, forCellWithReuseIdentifier: HomeViewCell.cellIdentifier)
-        view.isHidden = true
+        view.register(ProjectTaskViewCell.self, forCellWithReuseIdentifier: ProjectTaskViewCell.cellIdentifier)
         return view
     }()
     
@@ -33,6 +33,8 @@ class ProjectTaskView: UIView {
         super.init(frame: frame)
         translatesAutoresizingMaskIntoConstraints = false
         addSubviews(createNewBtn, collectionView)
+        collectionView.delegate = self
+        collectionView.dataSource = self
         addConstraints()
     }
     
@@ -44,7 +46,7 @@ class ProjectTaskView: UIView {
         NSLayoutConstraint.activate([
             createNewBtn.heightAnchor.constraint(equalToConstant: 70),
             createNewBtn.widthAnchor.constraint(equalToConstant: 70),
-            createNewBtn.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 140),
+            createNewBtn.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -120),
             createNewBtn.centerXAnchor.constraint(equalTo: centerXAnchor),
             
             collectionView.topAnchor.constraint(equalTo: topAnchor),
@@ -59,7 +61,7 @@ class ProjectTaskView: UIView {
 
 extension ProjectTaskView: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return taskList.count
+        return taskList.count+3
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -69,8 +71,8 @@ extension ProjectTaskView: UICollectionViewDelegate, UICollectionViewDataSource,
         ) as? ProjectTaskViewCell else {
             fatalError("Unsupported cell")
         }
-        let task = taskList[indexPath.row]
-        cell.configure(with: task)
+//        let task = taskList[indexPath.row]
+//        cell.configure(with: task)
         
         return cell
     }

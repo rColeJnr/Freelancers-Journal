@@ -16,6 +16,7 @@ extension FjTask {
         return NSFetchRequest<FjTask>(entityName: "FjTask")
     }
 
+    @NSManaged public var title: String?
     @NSManaged public var name: String?
     @NSManaged public var price: Double
 

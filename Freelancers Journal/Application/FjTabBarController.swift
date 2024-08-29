@@ -15,27 +15,28 @@ class FjTabBarController: UITabBarController {
     }
     
     private func setupTabs() {
-        let homeVc = HomeViewController()
+        let projectVc = ProjectMainRouter().createModule()
         let statisticsVc = StatisticsViewController()
-        let clientsVc = ClientsViewController()
+        let clientsVc = ClientRouter().createModule()
         let settingsVc = SettingsViewController()
         
-        homeVc.navigationItem.largeTitleDisplayMode = .inline
+        projectVc.navigationItem.largeTitleDisplayMode = .inline
         statisticsVc.navigationItem.largeTitleDisplayMode = .inline
         clientsVc.navigationItem.largeTitleDisplayMode = .inline
         settingsVc.navigationItem.largeTitleDisplayMode = .inline
     
-        let homeNav = UINavigationController(rootViewController: homeVc)
+        let projectNav = UINavigationController(rootViewController: projectVc)
         let statisticsNav = UINavigationController(rootViewController: statisticsVc)
         let clientsNav = UINavigationController(rootViewController: clientsVc)
         let settingsNav = UINavigationController(rootViewController: settingsVc)
         
-        homeNav.tabBarItem = UITabBarItem(title: "Home", image: UIImage(systemName: "homekit"), tag: 1)
+        projectNav.tabBarItem = UITabBarItem(title: "Home", image: UIImage(systemName: "homekit"), tag: 1)
         statisticsNav.tabBarItem = UITabBarItem(title: "Statistics", image: UIImage(systemName: "chart.bar"), tag: 2)
-        clientsNav.tabBarItem = UITabBarItem(title: "Clients", image: UIImage(systemName: "person.3.fill"), tag: 3)
+        clientsNav.tabBarItem = UITabBarItem(title: "Clients", image: UIImage(systemName: "person.3"), tag: 3)
         settingsNav.tabBarItem = UITabBarItem(title: "Settings", image: UIImage(systemName: "gear"), tag: 4)
         
-        setViewControllers([homeNav, statisticsNav, clientsNav, settingsNav], animated: true)
+        setViewControllers([projectNav, statisticsNav, clientsNav, settingsNav], animated: true)
+        tabBar.backgroundColor = .systemBackground
         
     }
     

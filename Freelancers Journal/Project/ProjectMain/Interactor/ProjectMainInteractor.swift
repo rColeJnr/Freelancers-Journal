@@ -6,3 +6,15 @@
 //
 
 import Foundation
+
+protocol ProjectMainInteractorProtocol {
+    func getProjects()
+}
+
+class ProjectMainInteractor: ProjectMainInteractorProtocol {
+    func getProjects() {
+        //
+    }
+    
+    
+}

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HomeViewCell: UICollectionViewCell {
+class ProjectMainViewCell: UICollectionViewCell {
     static let cellIdentifier = "HomeViewCell"
     
     let name = {

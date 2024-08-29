@@ -22,6 +22,7 @@ class ProjectCreateView: UIView {
     let nameTF = {
         let view = UITextField()
         view.font = .systemFont(ofSize: 20, weight: .medium)
+        view.backgroundColor = .systemBlue
         view.textColor = .white
         view.textAlignment = .left
         view.layer.cornerRadius = 15
@@ -43,6 +44,7 @@ class ProjectCreateView: UIView {
         let view = UITextView()
         view.isEditable = true
         view.font = .systemFont(ofSize: 20, weight: .medium)
+        view.backgroundColor = .systemBlue
         view.textColor = .white
         view.textAlignment = .left
         view.layer.cornerRadius = 15
@@ -65,6 +67,7 @@ class ProjectCreateView: UIView {
         view.isEditable = false
         view.isUserInteractionEnabled = true
         view.font = .systemFont(ofSize: 20, weight: .medium)
+        view.backgroundColor = .systemBlue
         view.textColor = .white
         view.textAlignment = .left
         view.layer.cornerRadius = 15
@@ -156,7 +159,7 @@ class ProjectCreateView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         translatesAutoresizingMaskIntoConstraints = false
-        addSubviews(nameLabel, nameTF, descriptionLabel, descritionTV, deadlineLabel, deadlineTV, priorityLabel, priorityYesBtn, priorityNoBtn, difficultyLabel, diffEasyBtn, diffMediumBtn, diffEasyBtn)
+        addSubviews(nameLabel, nameTF, descriptionLabel, descritionTV, deadlineLabel, deadlineTV, priorityLabel, priorityYesBtn, priorityNoBtn, difficultyLabel, diffEasyBtn, diffMediumBtn, diffHardBtn)
         addConstraints()
     }
     
@@ -167,62 +170,65 @@ class ProjectCreateView: UIView {
     private func addConstraints() {
         NSLayoutConstraint.activate([
             diffEasyBtn.heightAnchor.constraint(equalToConstant: 50),
-            diffEasyBtn.widthAnchor.constraint(equalToConstant: 100),
-            diffEasyBtn.leadingAnchor.constraint(equalTo: leadingAnchor),
-            diffEasyBtn.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -15),
+            diffEasyBtn.widthAnchor.constraint(equalToConstant: 115),
+            diffEasyBtn.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            diffEasyBtn.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20),
                 
             diffMediumBtn.heightAnchor.constraint(equalToConstant: 50),
-            diffMediumBtn.widthAnchor.constraint(equalToConstant: 100),
+            diffMediumBtn.widthAnchor.constraint(equalToConstant: 115),
             diffMediumBtn.centerXAnchor.constraint(equalTo: centerXAnchor),
-            diffMediumBtn.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -15),
+            diffMediumBtn.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20),
             
             diffHardBtn.heightAnchor.constraint(equalToConstant: 50),
-            diffHardBtn.widthAnchor.constraint(equalToConstant: 100),
-            diffHardBtn.trailingAnchor.constraint(equalTo: trailingAnchor),
-            diffHardBtn.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -15),
+            diffHardBtn.widthAnchor.constraint(equalToConstant: 115),
+            diffHardBtn.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
+            diffHardBtn.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20),
             
             difficultyLabel.heightAnchor.constraint(equalToConstant: 30),
-            difficultyLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
-            difficultyLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
-            difficultyLabel.bottomAnchor.constraint(equalTo: diffEasyBtn.topAnchor, constant: -5),
+            difficultyLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            difficultyLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
+            difficultyLabel.bottomAnchor.constraint(equalTo: diffEasyBtn.topAnchor, constant: -10),
             
             priorityYesBtn.heightAnchor.constraint(equalToConstant: 50),
-            priorityYesBtn.widthAnchor.constraint(equalToConstant: 150),
-            priorityYesBtn.bottomAnchor.constraint(equalTo: difficultyLabel.topAnchor, constant: -10),
-            priorityYesBtn.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
+            priorityYesBtn.widthAnchor.constraint(equalToConstant: 170),
+            priorityYesBtn.bottomAnchor.constraint(equalTo: difficultyLabel.topAnchor, constant: -20),
+            priorityYesBtn.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             
             priorityNoBtn.heightAnchor.constraint(equalToConstant: 50),
-            priorityNoBtn.widthAnchor.constraint(equalToConstant: 150),
-            priorityNoBtn.bottomAnchor.constraint(equalTo: difficultyLabel.topAnchor, constant: -10),
-            priorityNoBtn.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
+            priorityNoBtn.widthAnchor.constraint(equalToConstant: 170),
+            priorityNoBtn.bottomAnchor.constraint(equalTo: difficultyLabel.topAnchor, constant: -20),
+            priorityNoBtn.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
             
             priorityLabel.heightAnchor.constraint(equalToConstant: 30),
-            priorityLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
-            priorityLabel.bottomAnchor.constraint(equalTo: priorityYesBtn.topAnchor, constant: -5),
+            priorityLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            priorityLabel.bottomAnchor.constraint(equalTo: priorityYesBtn.topAnchor, constant: -10),
             
-            deadlineTV.heightAnchor.constraint(equalToConstant: 50),
-            deadlineTV.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
-            deadlineTV.bottomAnchor.constraint(equalTo: priorityLabel.topAnchor, constant: -10),
+            deadlineTV.heightAnchor.constraint(equalToConstant: 60),
+            deadlineTV.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            deadlineTV.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
+            deadlineTV.bottomAnchor.constraint(equalTo: priorityLabel.topAnchor, constant: -20),
             
             deadlineLabel.heightAnchor.constraint(equalToConstant: 30),
-            deadlineLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
+            deadlineLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             deadlineLabel.bottomAnchor.constraint(equalTo: deadlineTV.topAnchor, constant: -5),
             
-            descritionTV.heightAnchor.constraint(equalToConstant: 50),
-            descritionTV.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
-            descritionTV.bottomAnchor.constraint(equalTo: deadlineLabel.topAnchor, constant: -10),
+            descritionTV.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            descritionTV.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
+            descritionTV.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: -20),
+            descritionTV.bottomAnchor.constraint(equalTo: deadlineLabel.topAnchor, constant: -20),
             
             descriptionLabel.heightAnchor.constraint(equalToConstant: 100),
-            descriptionLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
-            descriptionLabel.bottomAnchor.constraint(equalTo: descritionTV.topAnchor, constant: -5),
+            descriptionLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            descriptionLabel.topAnchor.constraint(equalTo: nameTF.bottomAnchor, constant: -20),
             
-            nameTF.heightAnchor.constraint(equalToConstant: 50),
-            nameTF.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
-            nameTF.bottomAnchor.constraint(equalTo: priorityLabel.topAnchor, constant: -10),
+            nameTF.heightAnchor.constraint(equalToConstant: 60),
+            nameTF.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            nameTF.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
+            nameTF.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 10),
             
             nameLabel.heightAnchor.constraint(equalToConstant: 30),
-            nameLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
-            nameLabel.bottomAnchor.constraint(equalTo: nameTF.topAnchor, constant: -5),
+            nameLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            nameLabel.topAnchor.constraint(equalTo: topAnchor, constant: 10),
             
         ])
     }

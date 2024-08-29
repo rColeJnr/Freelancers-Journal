@@ -18,11 +18,39 @@
 		750E3DDB2C809C8000D0E9DD /* FjIsNewUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750E3DDA2C809C8000D0E9DD /* FjIsNewUser.swift */; };
 		750E3DDE2C809D8200D0E9DD /* FjTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750E3DDD2C809D8200D0E9DD /* FjTabBarController.swift */; };
 		750E3DE32C809ED300D0E9DD /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750E3DE22C809ED300D0E9DD /* SettingsViewController.swift */; };
-		750E3DE52C809EDC00D0E9DD /* ClientsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750E3DE42C809EDC00D0E9DD /* ClientsViewController.swift */; };
+		750E3DE52C809EDC00D0E9DD /* ClientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750E3DE42C809EDC00D0E9DD /* ClientViewController.swift */; };
 		750E3DE72C809EE500D0E9DD /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750E3DE62C809EE500D0E9DD /* StatisticsViewController.swift */; };
-		750E3DE92C809EEF00D0E9DD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750E3DE82C809EEF00D0E9DD /* HomeViewController.swift */; };
+		750E3DE92C809EEF00D0E9DD /* ProjectMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750E3DE82C809EEF00D0E9DD /* ProjectMainViewController.swift */; };
 		750E3DEB2C80A2E100D0E9DD /* FirstOnboardingViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750E3DEA2C80A2E100D0E9DD /* FirstOnboardingViewCell.swift */; };
 		750E3DED2C80A7E700D0E9DD /* SecondOnboardingViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750E3DEC2C80A7E700D0E9DD /* SecondOnboardingViewCell.swift */; };
+		750E3DF02C80CB4100D0E9DD /* ProjectMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750E3DEF2C80CB4100D0E9DD /* ProjectMainView.swift */; };
+		750E3DF22C80CFC300D0E9DD /* ProjectMainViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750E3DF12C80CFC300D0E9DD /* ProjectMainViewCell.swift */; };
+		750E3DF62C80D2CB00D0E9DD /* Project+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750E3DF42C80D2CB00D0E9DD /* Project+CoreDataClass.swift */; };
+		750E3DF72C80D2CB00D0E9DD /* Project+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750E3DF52C80D2CB00D0E9DD /* Project+CoreDataProperties.swift */; };
+		750E3DFB2C80D79100D0E9DD /* ProjectCreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750E3DFA2C80D79100D0E9DD /* ProjectCreateViewController.swift */; };
+		750E3DFD2C80D7E600D0E9DD /* ProjectCreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750E3DFC2C80D7E600D0E9DD /* ProjectCreateView.swift */; };
+		750E3E002C80DCAC00D0E9DD /* ProjectTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750E3DFF2C80DCAC00D0E9DD /* ProjectTaskViewController.swift */; };
+		750E3E022C80DCC400D0E9DD /* ProjectTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750E3E012C80DCC400D0E9DD /* ProjectTaskView.swift */; };
+		750E3E092C80DDA400D0E9DD /* FjTask+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750E3E072C80DDA400D0E9DD /* FjTask+CoreDataClass.swift */; };
+		750E3E0A2C80DDA400D0E9DD /* FjTask+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750E3E082C80DDA400D0E9DD /* FjTask+CoreDataProperties.swift */; };
+		750E3E0C2C80DDD100D0E9DD /* ProjectTaskViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750E3E0B2C80DDD100D0E9DD /* ProjectTaskViewCell.swift */; };
+		750E3E112C80E23300D0E9DD /* Client+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750E3E0F2C80E23300D0E9DD /* Client+CoreDataClass.swift */; };
+		750E3E122C80E23300D0E9DD /* Client+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750E3E102C80E23300D0E9DD /* Client+CoreDataProperties.swift */; };
+		750E3E142C80E24A00D0E9DD /* ClientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750E3E132C80E24A00D0E9DD /* ClientView.swift */; };
+		750E3E162C80E26200D0E9DD /* ClientViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750E3E152C80E26200D0E9DD /* ClientViewCell.swift */; };
+		750E3E1C2C80E4DF00D0E9DD /* ClientCreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750E3E1B2C80E4DF00D0E9DD /* ClientCreateViewController.swift */; };
+		750E3E1E2C80E4E900D0E9DD /* ClientCreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750E3E1D2C80E4E900D0E9DD /* ClientCreateView.swift */; };
+		750E3E242C80E67600D0E9DD /* ProjectMainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750E3E232C80E67600D0E9DD /* ProjectMainRouter.swift */; };
+		750E3E262C80E82000D0E9DD /* ProjectMainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750E3E252C80E82000D0E9DD /* ProjectMainPresenter.swift */; };
+		750E3E2A2C80E91A00D0E9DD /* ProjectMainInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750E3E292C80E91A00D0E9DD /* ProjectMainInteractor.swift */; };
+		750E3E2D2C80EB7600D0E9DD /* ProjectCreatePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750E3E2C2C80EB7600D0E9DD /* ProjectCreatePresenter.swift */; };
+		750E3E2F2C80EB8700D0E9DD /* ProjectCreateRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750E3E2E2C80EB8700D0E9DD /* ProjectCreateRouter.swift */; };
+		750E3E312C80EE5900D0E9DD /* ProjectTaskRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750E3E302C80EE5900D0E9DD /* ProjectTaskRouter.swift */; };
+		750E3E342C80EF7800D0E9DD /* ProjectTaskPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750E3E332C80EF7800D0E9DD /* ProjectTaskPresenter.swift */; };
+		750E3E362C80F03F00D0E9DD /* ClientRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750E3E352C80F03F00D0E9DD /* ClientRouter.swift */; };
+		750E3E392C8110C500D0E9DD /* ClientPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750E3E382C8110C500D0E9DD /* ClientPresenter.swift */; };
+		750E3E3E2C8112E200D0E9DD /* ClientCreatePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750E3E3D2C8112E200D0E9DD /* ClientCreatePresenter.swift */; };
+		750E3E402C81144900D0E9DD /* ClientCreateRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750E3E3F2C81144900D0E9DD /* ClientCreateRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,11 +67,39 @@
 		750E3DDA2C809C8000D0E9DD /* FjIsNewUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FjIsNewUser.swift; sourceTree = "<group>"; };
 		750E3DDD2C809D8200D0E9DD /* FjTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FjTabBarController.swift; sourceTree = "<group>"; };
 		750E3DE22C809ED300D0E9DD /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		750E3DE42C809EDC00D0E9DD /* ClientsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientsViewController.swift; sourceTree = "<group>"; };
+		750E3DE42C809EDC00D0E9DD /* ClientViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientViewController.swift; sourceTree = "<group>"; };
 		750E3DE62C809EE500D0E9DD /* StatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
-		750E3DE82C809EEF00D0E9DD /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		750E3DE82C809EEF00D0E9DD /* ProjectMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectMainViewController.swift; sourceTree = "<group>"; };
 		750E3DEA2C80A2E100D0E9DD /* FirstOnboardingViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstOnboardingViewCell.swift; sourceTree = "<group>"; };
 		750E3DEC2C80A7E700D0E9DD /* SecondOnboardingViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondOnboardingViewCell.swift; sourceTree = "<group>"; };
+		750E3DEF2C80CB4100D0E9DD /* ProjectMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectMainView.swift; sourceTree = "<group>"; };
+		750E3DF12C80CFC300D0E9DD /* ProjectMainViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectMainViewCell.swift; sourceTree = "<group>"; };
+		750E3DF42C80D2CB00D0E9DD /* Project+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Project+CoreDataClass.swift"; sourceTree = "<group>"; };
+		750E3DF52C80D2CB00D0E9DD /* Project+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Project+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		750E3DFA2C80D79100D0E9DD /* ProjectCreateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectCreateViewController.swift; sourceTree = "<group>"; };
+		750E3DFC2C80D7E600D0E9DD /* ProjectCreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectCreateView.swift; sourceTree = "<group>"; };
+		750E3DFF2C80DCAC00D0E9DD /* ProjectTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTaskViewController.swift; sourceTree = "<group>"; };
+		750E3E012C80DCC400D0E9DD /* ProjectTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTaskView.swift; sourceTree = "<group>"; };
+		750E3E072C80DDA400D0E9DD /* FjTask+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FjTask+CoreDataClass.swift"; sourceTree = "<group>"; };
+		750E3E082C80DDA400D0E9DD /* FjTask+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FjTask+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		750E3E0B2C80DDD100D0E9DD /* ProjectTaskViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTaskViewCell.swift; sourceTree = "<group>"; };
+		750E3E0F2C80E23300D0E9DD /* Client+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Client+CoreDataClass.swift"; sourceTree = "<group>"; };
+		750E3E102C80E23300D0E9DD /* Client+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Client+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		750E3E132C80E24A00D0E9DD /* ClientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientView.swift; sourceTree = "<group>"; };
+		750E3E152C80E26200D0E9DD /* ClientViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientViewCell.swift; sourceTree = "<group>"; };
+		750E3E1B2C80E4DF00D0E9DD /* ClientCreateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientCreateViewController.swift; sourceTree = "<group>"; };
+		750E3E1D2C80E4E900D0E9DD /* ClientCreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientCreateView.swift; sourceTree = "<group>"; };
+		750E3E232C80E67600D0E9DD /* ProjectMainRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectMainRouter.swift; sourceTree = "<group>"; };
+		750E3E252C80E82000D0E9DD /* ProjectMainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectMainPresenter.swift; sourceTree = "<group>"; };
+		750E3E292C80E91A00D0E9DD /* ProjectMainInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectMainInteractor.swift; sourceTree = "<group>"; };
+		750E3E2C2C80EB7600D0E9DD /* ProjectCreatePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectCreatePresenter.swift; sourceTree = "<group>"; };
+		750E3E2E2C80EB8700D0E9DD /* ProjectCreateRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectCreateRouter.swift; sourceTree = "<group>"; };
+		750E3E302C80EE5900D0E9DD /* ProjectTaskRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTaskRouter.swift; sourceTree = "<group>"; };
+		750E3E332C80EF7800D0E9DD /* ProjectTaskPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTaskPresenter.swift; sourceTree = "<group>"; };
+		750E3E352C80F03F00D0E9DD /* ClientRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientRouter.swift; sourceTree = "<group>"; };
+		750E3E382C8110C500D0E9DD /* ClientPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientPresenter.swift; sourceTree = "<group>"; };
+		750E3E3D2C8112E200D0E9DD /* ClientCreatePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientCreatePresenter.swift; sourceTree = "<group>"; };
+		750E3E3F2C81144900D0E9DD /* ClientCreateRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientCreateRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,11 +133,11 @@
 			isa = PBXGroup;
 			children = (
 				750E3DE12C809EC500D0E9DD /* Settings */,
-				750E3DE02C809EBD00D0E9DD /* Clients */,
+				750E3DE02C809EBD00D0E9DD /* Client */,
 				750E3DDF2C809EB200D0E9DD /* Statistics */,
 				750E3DDC2C809D7600D0E9DD /* Application */,
 				750E3DD42C809BC900D0E9DD /* Common */,
-				750E3DCD2C808F2C00D0E9DD /* Home */,
+				750E3DCD2C808F2C00D0E9DD /* Project */,
 				750E3DCC2C808F0E00D0E9DD /* Onboarding */,
 				750E3DB82C808EE900D0E9DD /* AppDelegate.swift */,
 				750E3DBA2C808EE900D0E9DD /* SceneDelegate.swift */,
@@ -104,18 +160,24 @@
 			path = Onboarding;
 			sourceTree = "<group>";
 		};
-		750E3DCD2C808F2C00D0E9DD /* Home */ = {
+		750E3DCD2C808F2C00D0E9DD /* Project */ = {
 			isa = PBXGroup;
 			children = (
-				750E3DCE2C808F4600D0E9DD /* View */,
+				750E3E1F2C80E61800D0E9DD /* ProjectMain */,
+				750E3DFE2C80DC9B00D0E9DD /* ProjectTask */,
+				750E3DF92C80D6EF00D0E9DD /* ProjectCreate */,
+				750E3DF82C80D50200D0E9DD /* ProjectDetails */,
+				750E3DF32C80D2B500D0E9DD /* Entities */,
 			);
-			path = Home;
+			path = Project;
 			sourceTree = "<group>";
 		};
 		750E3DCE2C808F4600D0E9DD /* View */ = {
 			isa = PBXGroup;
 			children = (
-				750E3DE82C809EEF00D0E9DD /* HomeViewController.swift */,
+				750E3DE82C809EEF00D0E9DD /* ProjectMainViewController.swift */,
+				750E3DEF2C80CB4100D0E9DD /* ProjectMainView.swift */,
+				750E3DF12C80CFC300D0E9DD /* ProjectMainViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -145,12 +207,15 @@
 			path = Statistics;
 			sourceTree = "<group>";
 		};
-		750E3DE02C809EBD00D0E9DD /* Clients */ = {
+		750E3DE02C809EBD00D0E9DD /* Client */ = {
 			isa = PBXGroup;
 			children = (
-				750E3DE42C809EDC00D0E9DD /* ClientsViewController.swift */,
+				750E3E3A2C8110D300D0E9DD /* ClientMain */,
+				750E3E182C80E4B400D0E9DD /* ClientDetails */,
+				750E3E172C80E4A700D0E9DD /* ClientCreate */,
+				750E3E0D2C80E18D00D0E9DD /* Entities */,
 			);
-			path = Clients;
+			path = Client;
 			sourceTree = "<group>";
 		};
 		750E3DE12C809EC500D0E9DD /* Settings */ = {
@@ -159,6 +224,225 @@
 				750E3DE22C809ED300D0E9DD /* SettingsViewController.swift */,
 			);
 			path = Settings;
+			sourceTree = "<group>";
+		};
+		750E3DEE2C80CA9500D0E9DD /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				750E3E232C80E67600D0E9DD /* ProjectMainRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		750E3DF32C80D2B500D0E9DD /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				750E3DF42C80D2CB00D0E9DD /* Project+CoreDataClass.swift */,
+				750E3DF52C80D2CB00D0E9DD /* Project+CoreDataProperties.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		750E3DF82C80D50200D0E9DD /* ProjectDetails */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ProjectDetails;
+			sourceTree = "<group>";
+		};
+		750E3DF92C80D6EF00D0E9DD /* ProjectCreate */ = {
+			isa = PBXGroup;
+			children = (
+				750E3E2B2C80EB3700D0E9DD /* Presenter */,
+				750E3E202C80E63D00D0E9DD /* Router */,
+				750E3E042C80DD6A00D0E9DD /* View */,
+			);
+			path = ProjectCreate;
+			sourceTree = "<group>";
+		};
+		750E3DFE2C80DC9B00D0E9DD /* ProjectTask */ = {
+			isa = PBXGroup;
+			children = (
+				750E3E322C80EF6800D0E9DD /* Presenter */,
+				750E3E212C80E64200D0E9DD /* Router */,
+				750E3E062C80DD7100D0E9DD /* Entities */,
+				750E3E052C80DD6E00D0E9DD /* View */,
+			);
+			path = ProjectTask;
+			sourceTree = "<group>";
+		};
+		750E3E042C80DD6A00D0E9DD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				750E3DFA2C80D79100D0E9DD /* ProjectCreateViewController.swift */,
+				750E3DFC2C80D7E600D0E9DD /* ProjectCreateView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		750E3E052C80DD6E00D0E9DD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				750E3DFF2C80DCAC00D0E9DD /* ProjectTaskViewController.swift */,
+				750E3E0B2C80DDD100D0E9DD /* ProjectTaskViewCell.swift */,
+				750E3E012C80DCC400D0E9DD /* ProjectTaskView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		750E3E062C80DD7100D0E9DD /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				750E3E072C80DDA400D0E9DD /* FjTask+CoreDataClass.swift */,
+				750E3E082C80DDA400D0E9DD /* FjTask+CoreDataProperties.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		750E3E0D2C80E18D00D0E9DD /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				750E3E0F2C80E23300D0E9DD /* Client+CoreDataClass.swift */,
+				750E3E102C80E23300D0E9DD /* Client+CoreDataProperties.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		750E3E0E2C80E19900D0E9DD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				750E3DE42C809EDC00D0E9DD /* ClientViewController.swift */,
+				750E3E132C80E24A00D0E9DD /* ClientView.swift */,
+				750E3E152C80E26200D0E9DD /* ClientViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		750E3E172C80E4A700D0E9DD /* ClientCreate */ = {
+			isa = PBXGroup;
+			children = (
+				750E3E3C2C81127B00D0E9DD /* Router */,
+				750E3E3B2C81127300D0E9DD /* Presenter */,
+				750E3E192C80E4BB00D0E9DD /* View */,
+			);
+			path = ClientCreate;
+			sourceTree = "<group>";
+		};
+		750E3E182C80E4B400D0E9DD /* ClientDetails */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ClientDetails;
+			sourceTree = "<group>";
+		};
+		750E3E192C80E4BB00D0E9DD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				750E3E1B2C80E4DF00D0E9DD /* ClientCreateViewController.swift */,
+				750E3E1D2C80E4E900D0E9DD /* ClientCreateView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		750E3E1A2C80E4CE00D0E9DD /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				750E3E352C80F03F00D0E9DD /* ClientRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		750E3E1F2C80E61800D0E9DD /* ProjectMain */ = {
+			isa = PBXGroup;
+			children = (
+				750E3E272C80E90300D0E9DD /* Interactor */,
+				750E3E222C80E64800D0E9DD /* Presenter */,
+				750E3DEE2C80CA9500D0E9DD /* Router */,
+				750E3DCE2C808F4600D0E9DD /* View */,
+			);
+			path = ProjectMain;
+			sourceTree = "<group>";
+		};
+		750E3E202C80E63D00D0E9DD /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				750E3E2E2C80EB8700D0E9DD /* ProjectCreateRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		750E3E212C80E64200D0E9DD /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				750E3E302C80EE5900D0E9DD /* ProjectTaskRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		750E3E222C80E64800D0E9DD /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				750E3E252C80E82000D0E9DD /* ProjectMainPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		750E3E272C80E90300D0E9DD /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				750E3E292C80E91A00D0E9DD /* ProjectMainInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		750E3E2B2C80EB3700D0E9DD /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				750E3E2C2C80EB7600D0E9DD /* ProjectCreatePresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		750E3E322C80EF6800D0E9DD /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				750E3E332C80EF7800D0E9DD /* ProjectTaskPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		750E3E372C8110B800D0E9DD /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				750E3E382C8110C500D0E9DD /* ClientPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		750E3E3A2C8110D300D0E9DD /* ClientMain */ = {
+			isa = PBXGroup;
+			children = (
+				750E3E1A2C80E4CE00D0E9DD /* Router */,
+				750E3E372C8110B800D0E9DD /* Presenter */,
+				750E3E0E2C80E19900D0E9DD /* View */,
+			);
+			path = ClientMain;
+			sourceTree = "<group>";
+		};
+		750E3E3B2C81127300D0E9DD /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				750E3E3D2C8112E200D0E9DD /* ClientCreatePresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		750E3E3C2C81127B00D0E9DD /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				750E3E3F2C81144900D0E9DD /* ClientCreateRouter.swift */,
+			);
+			path = Router;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,20 +515,48 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				750E3DFD2C80D7E600D0E9DD /* ProjectCreateView.swift in Sources */,
 				750E3DB92C808EE900D0E9DD /* AppDelegate.swift in Sources */,
+				750E3DF22C80CFC300D0E9DD /* ProjectMainViewCell.swift in Sources */,
+				750E3E002C80DCAC00D0E9DD /* ProjectTaskViewController.swift in Sources */,
 				750E3DD02C80955500D0E9DD /* OnboardingViewController.swift in Sources */,
 				750E3DD72C809BE300D0E9DD /* FjExtensions.swift in Sources */,
-				750E3DE52C809EDC00D0E9DD /* ClientsViewController.swift in Sources */,
+				750E3E112C80E23300D0E9DD /* Client+CoreDataClass.swift in Sources */,
+				750E3E392C8110C500D0E9DD /* ClientPresenter.swift in Sources */,
+				750E3E122C80E23300D0E9DD /* Client+CoreDataProperties.swift in Sources */,
+				750E3DF02C80CB4100D0E9DD /* ProjectMainView.swift in Sources */,
+				750E3DE52C809EDC00D0E9DD /* ClientViewController.swift in Sources */,
+				750E3E1C2C80E4DF00D0E9DD /* ClientCreateViewController.swift in Sources */,
+				750E3E2D2C80EB7600D0E9DD /* ProjectCreatePresenter.swift in Sources */,
 				750E3DEB2C80A2E100D0E9DD /* FirstOnboardingViewCell.swift in Sources */,
 				750E3DDE2C809D8200D0E9DD /* FjTabBarController.swift in Sources */,
 				750E3DE72C809EE500D0E9DD /* StatisticsViewController.swift in Sources */,
+				750E3E092C80DDA400D0E9DD /* FjTask+CoreDataClass.swift in Sources */,
+				750E3E242C80E67600D0E9DD /* ProjectMainRouter.swift in Sources */,
+				750E3E0A2C80DDA400D0E9DD /* FjTask+CoreDataProperties.swift in Sources */,
+				750E3E362C80F03F00D0E9DD /* ClientRouter.swift in Sources */,
+				750E3DFB2C80D79100D0E9DD /* ProjectCreateViewController.swift in Sources */,
+				750E3E402C81144900D0E9DD /* ClientCreateRouter.swift in Sources */,
 				750E3DD92C809C4B00D0E9DD /* OnboardingView.swift in Sources */,
+				750E3E2F2C80EB8700D0E9DD /* ProjectCreateRouter.swift in Sources */,
+				750E3E022C80DCC400D0E9DD /* ProjectTaskView.swift in Sources */,
+				750E3E3E2C8112E200D0E9DD /* ClientCreatePresenter.swift in Sources */,
 				750E3DD32C809BC500D0E9DD /* FjCoreData.xcdatamodeld in Sources */,
+				750E3E2A2C80E91A00D0E9DD /* ProjectMainInteractor.swift in Sources */,
+				750E3E162C80E26200D0E9DD /* ClientViewCell.swift in Sources */,
+				750E3E342C80EF7800D0E9DD /* ProjectTaskPresenter.swift in Sources */,
 				750E3DED2C80A7E700D0E9DD /* SecondOnboardingViewCell.swift in Sources */,
+				750E3E262C80E82000D0E9DD /* ProjectMainPresenter.swift in Sources */,
+				750E3DF62C80D2CB00D0E9DD /* Project+CoreDataClass.swift in Sources */,
+				750E3E142C80E24A00D0E9DD /* ClientView.swift in Sources */,
+				750E3E312C80EE5900D0E9DD /* ProjectTaskRouter.swift in Sources */,
+				750E3E0C2C80DDD100D0E9DD /* ProjectTaskViewCell.swift in Sources */,
+				750E3DF72C80D2CB00D0E9DD /* Project+CoreDataProperties.swift in Sources */,
+				750E3E1E2C80E4E900D0E9DD /* ClientCreateView.swift in Sources */,
 				750E3DBB2C808EE900D0E9DD /* SceneDelegate.swift in Sources */,
 				750E3DDB2C809C8000D0E9DD /* FjIsNewUser.swift in Sources */,
 				750E3DE32C809ED300D0E9DD /* SettingsViewController.swift in Sources */,
-				750E3DE92C809EEF00D0E9DD /* HomeViewController.swift in Sources */,
+				750E3DE92C809EEF00D0E9DD /* ProjectMainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

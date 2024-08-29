@@ -12,6 +12,7 @@ class ProjectTaskViewCell: UICollectionViewCell {
     
     let title = {
         let view = UILabel()
+        view.text = "Task"
         view.font = .systemFont(ofSize: 20, weight: .medium)
         view.textColor = .white
         view.textAlignment = .left
@@ -21,8 +22,10 @@ class ProjectTaskViewCell: UICollectionViewCell {
     
     let name = {
         let view = UITextView()
+        view.text = "fdfdfdf"
         view.isEditable = true
         view.font = .systemFont(ofSize: 20, weight: .medium)
+        view.backgroundColor = .blue
         view.textColor = .white
         view.textAlignment = .left
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -31,8 +34,10 @@ class ProjectTaskViewCell: UICollectionViewCell {
     
     let price = {
         let view = UITextView()
+        view.text = "34554"
         view.isEditable = true
         view.font = .systemFont(ofSize: 20, weight: .medium)
+        view.backgroundColor = .blue
         view.textColor = .white
         view.textAlignment = .left
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -65,7 +70,6 @@ class ProjectTaskViewCell: UICollectionViewCell {
             
             price.heightAnchor.constraint(equalToConstant: 40),
             price.topAnchor.constraint(equalTo: name.bottomAnchor, constant: 10),
-            price.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 10),
             price.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
             price.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
             

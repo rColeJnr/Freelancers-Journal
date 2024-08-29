@@ -7,19 +7,24 @@
 
 import UIKit
 
-class HomeView: UIView {
+protocol ProjectMainViewDelegate {
+    func navigateToCreateProject()
+}
+
+class ProjectMainView: UIView {
     
     var projects: [Project] = []
+    var delegate: ProjectMainViewDelegate?
     
     // MARK: - VIEWS
-    let image = {
+    private let image = {
         let view = UIImageView()
         view.image = UIImage( named: "notebook")
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
-    let title = {
+    private let title = {
         let view = UILabel()
         view.text = "You don't have any projects yet"
         view.font = .systemFont(ofSize: 26, weight: .bold)
@@ -29,7 +34,7 @@ class HomeView: UIView {
         return view
     }()
     
-    let descriptionTV = {
+    private let descriptionTV = {
         let view = UILabel()
         view.text = "Create one now"
         view.font = .systemFont(ofSize: 18, weight: .medium)
@@ -39,28 +44,34 @@ class HomeView: UIView {
         return view
     }()
     
-    let createNewBtn = {
+    private let createNewBtn = {
         let view = UIImageView()
         view.image = UIImage( named: "circle_add_btn")
+        view.isUserInteractionEnabled = true
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
-    let collectionView = {
+    private let collectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
         layout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
         let view = UICollectionView(frame: .zero, collectionViewLayout: layout)
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.register(HomeViewCell.self, forCellWithReuseIdentifier: HomeViewCell.cellIdentifier)
+        view.register(ProjectMainViewCell.self, forCellWithReuseIdentifier: ProjectMainViewCell.cellIdentifier)
         view.isHidden = true
         return view
     }()
+    
+    @objc private func onCreateNewBtnClick(_ sender: Any) {
+        delegate?.navigateToCreateProject()
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         translatesAutoresizingMaskIntoConstraints = false
         addSubviews(image, title, descriptionTV, createNewBtn, collectionView)
+        createNewBtn.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onCreateNewBtnClick(_ :))))
         addConstraints()
     }
     
@@ -72,7 +83,7 @@ class HomeView: UIView {
         NSLayoutConstraint.activate([
             createNewBtn.heightAnchor.constraint(equalToConstant: 70),
             createNewBtn.widthAnchor.constraint(equalToConstant: 70),
-            createNewBtn.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 140),
+            createNewBtn.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -120),
             createNewBtn.centerXAnchor.constraint(equalTo: centerXAnchor),
             
             collectionView.topAnchor.constraint(equalTo: topAnchor),
@@ -82,7 +93,7 @@ class HomeView: UIView {
             
             descriptionTV.heightAnchor.constraint(equalToConstant: 15),
             descriptionTV.centerXAnchor.constraint(equalTo: centerXAnchor),
-            descriptionTV.bottomAnchor.constraint(equalTo: createNewBtn.topAnchor, constant: -70),
+            descriptionTV.bottomAnchor.constraint(equalTo: createNewBtn.topAnchor, constant: -90),
             
             title.heightAnchor.constraint(equalToConstant: 30),
             title.centerXAnchor.constraint(equalTo: centerXAnchor),
@@ -96,16 +107,16 @@ class HomeView: UIView {
     
 }
 
-extension HomeView: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension ProjectMainView: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return projects.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(
-            withReuseIdentifier: HomeViewCell.cellIdentifier,
+            withReuseIdentifier: ProjectMainViewCell.cellIdentifier,
             for: indexPath
-        ) as? HomeViewCell else {
+        ) as? ProjectMainViewCell else {
             fatalError("Unsupported cell")
         }
         let project = projects[indexPath.row]

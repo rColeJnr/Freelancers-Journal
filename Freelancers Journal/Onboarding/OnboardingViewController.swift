@@ -39,6 +39,10 @@ extension OnboardingViewController: FirstOnboardingViewCellDelegate, SecondOnboa
     
     func navigateToHomeController() {
         FjIsNewUser.shared.setNotIsNewUSer()
+        let fjController = FjTabBarController()
+        fjController.modalPresentationStyle = .fullScreen
+        fjController.modalTransitionStyle = .flipHorizontal
+        present(fjController, animated: true)
     }
     
     

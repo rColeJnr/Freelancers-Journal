@@ -7,13 +7,30 @@
 
 import UIKit
 
-class ProjectCreateViewController: UIViewController {
+protocol ProjectCreateViewProtocol: AnyObject {
+    var presenter: ProjectCreatePresenterProtocol? { get set }
+}
+
+class ProjectCreateViewController: UIViewController, ProjectCreateViewProtocol {
     
     private let projectCreateView = ProjectCreateView()
+    var presenter: ProjectCreatePresenterProtocol?
+ 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Add new project"
+        view.backgroundColor = .systemCyan
+        presenter?.viewDidLoad()
         setupView(projectCreateView)
+        addNextButton()
     }
+
+    private func addNextButton() {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(navigateToTasks(_ :)))
+    }
+    
+    @objc private func navigateToTasks(_ sender : Any) {
+        presenter?.router?.createProjectTaskModule(from: self/*, for: project*/)
+    }
+    
 }
