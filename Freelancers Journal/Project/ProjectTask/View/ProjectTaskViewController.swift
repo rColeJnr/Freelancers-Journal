@@ -32,7 +32,6 @@ class ProjectTaskViewController: UIViewController, ProjectTaskViewProtocol {
             return
         }
         presenter?.project?.tasks = taskList
-        print("please \(presenter?.project?.name)")
         presenter?.router?.createClientModule(from: self, for: (presenter?.project)!)
     }
     

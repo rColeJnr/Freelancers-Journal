@@ -77,17 +77,17 @@ class ProjectTaskView: UIView, ProjectTaskViewCellDelegate {
     
     @objc private func createNewTask(_ sender: Any) {
         let count = taskList.count
-        let indexPath = IndexPath(item: count, section: 0)
-        guard let cell = collectionView.dequeueReusableCell(
+        let indexPath = IndexPath(item: count-1, section: 0)
+        guard collectionView.dequeueReusableCell(
             withReuseIdentifier: ProjectTaskViewCell.cellIdentifier,
             for: indexPath
-        ) as? ProjectTaskViewCell else {
+        ) is ProjectTaskViewCell else {
             fatalError("Unsupported cell")
         }
     
         guard
             let name = taskName,
-            let price = taskPrice else {
+            let price = Float(taskPrice!) else {
                 return
             }
         
@@ -105,7 +105,7 @@ class ProjectTaskView: UIView, ProjectTaskViewCellDelegate {
         if taskName!.isEmpty || taskPrice!.isEmpty {
             return nil
         }
-        result.append(TaskModel(title: taskList.last?.title, name: taskName!, price: taskPrice!))
+        result.append(TaskModel(title: taskList.last?.title, name: taskName!, price: Float(taskPrice!)))
         return result
     }
     

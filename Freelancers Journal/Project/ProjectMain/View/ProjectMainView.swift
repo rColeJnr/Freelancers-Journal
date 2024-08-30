@@ -13,7 +13,7 @@ protocol ProjectMainViewDelegate {
 
 class ProjectMainView: UIView {
     
-    var projects: [Project] = []
+    private var projects: [Project] = []
     var delegate: ProjectMainViewDelegate?
     
     // MARK: - VIEWS
@@ -59,6 +59,7 @@ class ProjectMainView: UIView {
         let view = UICollectionView(frame: .zero, collectionViewLayout: layout)
         view.translatesAutoresizingMaskIntoConstraints = false
         view.register(ProjectMainViewCell.self, forCellWithReuseIdentifier: ProjectMainViewCell.cellIdentifier)
+        view.backgroundColor = .systemCyan
         view.isHidden = true
         return view
     }()
@@ -72,6 +73,8 @@ class ProjectMainView: UIView {
         translatesAutoresizingMaskIntoConstraints = false
         addSubviews(image, title, descriptionTV, createNewBtn, collectionView)
         createNewBtn.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onCreateNewBtnClick(_ :))))
+        collectionView.delegate = self
+        collectionView.dataSource = self
         addConstraints()
     }
     
@@ -105,6 +108,14 @@ class ProjectMainView: UIView {
         ])
     }
     
+    func configureCollectionView(with projects: [Project]) {
+        self.projects = projects
+        collectionView.isHidden = false
+        image.isHidden = true
+        descriptionTV.isHidden = true
+        title.isHidden = true
+        collectionView.reloadData()
+    }
 }
 
 extension ProjectMainView: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {

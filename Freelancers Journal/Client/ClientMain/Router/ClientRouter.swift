@@ -8,14 +8,14 @@
 import Foundation
 
 protocol ClientRouterProtocol {
-    func createClientModule(from view: ClientViewProtocol)
+    func createClientModule(from view: ClientViewProtocol, for project: ProjectModel)
     func createModule(for project: ProjectModel?) -> ClientViewController
 }
 
 class ClientRouter: ClientRouterProtocol {
     
-    func createClientModule(from view: ClientViewProtocol) {
-        let clientCreateVc = ClientCreateRouter().createModule()
+    func createClientModule(from view: ClientViewProtocol, for project: ProjectModel) {
+        let clientCreateVc = ClientCreateRouter().createModule(for: project)
         
         if let sourceView = view as? ClientViewController {
             sourceView.navigationController?.pushViewController(clientCreateVc, animated: true)

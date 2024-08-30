@@ -50,14 +50,17 @@ class ProjectMainViewCell: UICollectionViewCell {
     private func addConstraints() {
         NSLayoutConstraint.activate([
             name.widthAnchor.constraint(equalToConstant: 350),
+            name.heightAnchor.constraint(equalToConstant: 30),
             name.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 5),
             name.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             
             date.widthAnchor.constraint(equalToConstant: 350),
+            date.heightAnchor.constraint(equalToConstant: 30),
             date.topAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 5),
             date.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             
             price.widthAnchor.constraint(equalToConstant: 250),
+            price.heightAnchor.constraint(equalToConstant: 30),
             price.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
             price.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
         
@@ -66,8 +69,8 @@ class ProjectMainViewCell: UICollectionViewCell {
     
     func configure(with project: Project) {
         name.text = project.name
-        date.text = project.date?.description
-        price.text = "\(project.price) $"
+//        date.text = project.deadline?.description
+//        price.text = "\(project.price) $"
     }
     
 }

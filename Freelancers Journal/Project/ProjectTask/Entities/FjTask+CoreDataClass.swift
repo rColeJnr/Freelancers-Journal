@@ -2,7 +2,7 @@
 //  FjTask+CoreDataClass.swift
 //  Freelancers Journal
 //
-//  Created by rColeJnr on 29/08/24.
+//  Created by rColeJnr on 30/08/24.
 //
 //
 

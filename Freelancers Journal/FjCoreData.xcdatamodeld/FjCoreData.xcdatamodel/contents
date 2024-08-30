@@ -4,19 +4,23 @@
         <attribute name="details" optional="YES" attributeType="String"/>
         <attribute name="email" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
-        <attribute name="phone" optional="YES" attributeType="String"/>
+        <attribute name="number" optional="YES" attributeType="String"/>
         <attribute name="regular" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <relationship name="project" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Project" inverseName="client" inverseEntity="Project"/>
     </entity>
     <entity name="FjTask" representedClassName="FjTask" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String"/>
-        <attribute name="price" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
-        <attribute name="title" optional="YES" attributeType="String"/>
+        <attribute name="price" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <relationship name="project" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Project" inverseName="task" inverseEntity="Project"/>
     </entity>
     <entity name="Project" representedClassName="Project" syncable="YES">
-        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="completed" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="deadline" optional="YES" attributeType="String"/>
+        <attribute name="details" optional="YES" attributeType="String"/>
+        <attribute name="difficulty" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
-        <attribute name="price" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
-        <relationship name="client" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Client"/>
-        <relationship name="task" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FjTask"/>
+        <attribute name="priority" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <relationship name="client" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Client" inverseName="project" inverseEntity="Client"/>
+        <relationship name="task" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="FjTask" inverseName="project" inverseEntity="FjTask"/>
     </entity>
 </model>

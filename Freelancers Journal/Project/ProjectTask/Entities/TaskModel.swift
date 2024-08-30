@@ -11,9 +11,9 @@ struct TaskModel {
     
     let title: String?
     let name: String?
-    let price: String?
+    let price: Float?
     
-    init(title: String?, name: String?, price: String?) {
+    init(title: String?, name: String?, price: Float?) {
         self.title = title
         self.name = name
         self.price = price

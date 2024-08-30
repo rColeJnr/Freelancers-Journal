@@ -13,7 +13,7 @@ protocol ClientViewDelegate {
 
 class ClientView: UIView {
     
-    var clients: [Client] = []
+    var clients: [ClientModel] = []
     var delegate: ClientViewDelegate?
     
     // MARK: - VIEWS
@@ -120,7 +120,7 @@ extension ClientView: UICollectionViewDelegate, UICollectionViewDataSource, UICo
             fatalError("Unsupported cell")
         }
         let client = clients[indexPath.row]
-        cell.configure(with: client)
+//        cell.configure(with: client)
         
         return cell
     }

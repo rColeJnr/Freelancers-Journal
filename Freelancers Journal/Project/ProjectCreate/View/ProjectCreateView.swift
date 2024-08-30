@@ -64,12 +64,14 @@ class ProjectCreateView: UIView {
     
     private let deadlineTV = {
         let view = UITextView()
+        view.accessibilityHint = "Deadline"
         view.isEditable = false
-        view.isUserInteractionEnabled = true
+        view.isUserInteractionEnabled = false
         view.font = .systemFont(ofSize: 20, weight: .medium)
         view.backgroundColor = .systemBlue
         view.textColor = .white
-        view.textAlignment = .left
+        view.text = "Set deadline"
+        view.textAlignment = .center
         view.layer.cornerRadius = 15
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
@@ -177,6 +179,20 @@ class ProjectCreateView: UIView {
         chosenDifficulty = "Hard"
     }
     
+    let datePickerView = {
+        let view = UIDatePicker()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.datePickerMode = .date
+        return view
+    }()
+    
+    @objc private func setDeadline(_ sender: UIDatePicker) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .medium
+        dateFormatter.timeStyle = .none
+        deadlineTV.text = dateFormatter.string(from: sender.date)
+    }
+    
     private var chosenPriority: Bool? = nil
     private var chosenDifficulty: String? = nil
     
@@ -190,7 +206,7 @@ class ProjectCreateView: UIView {
             return nil
         }
         
-        return ProjectModel(name: name, description: description, deadline: deadline, priority: priority, diff: difficulty)
+        return ProjectModel(name: name, description: description, deadline: deadline, priority: priority, diff: difficulty, tasks: [], client: nil)
     }
     
     override init(frame: CGRect) {
@@ -201,7 +217,9 @@ class ProjectCreateView: UIView {
         diffEasyBtn.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(setDiffEasy(_ :))))
         diffMediumBtn.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(setDiffMedium(_ :))))
         diffHardBtn.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(setDiffHard(_ :))))
-        addSubviews(nameLabel, nameTF, descriptionLabel, descritionTV, deadlineLabel, deadlineTV, priorityLabel, priorityYesBtn, priorityNoBtn, difficultyLabel, diffEasyBtn, diffMediumBtn, diffHardBtn)
+        datePickerView.addTarget(self, action: #selector(setDeadline), for: .valueChanged)
+        deadlineTV.inputView = datePickerView
+        addSubviews(datePickerView, nameLabel, nameTF, descriptionLabel, descritionTV, deadlineLabel, deadlineTV, priorityLabel, priorityYesBtn, priorityNoBtn, difficultyLabel, diffEasyBtn, diffMediumBtn, diffHardBtn)
         addConstraints()
     }
     
@@ -271,7 +289,10 @@ class ProjectCreateView: UIView {
             nameLabel.heightAnchor.constraint(equalToConstant: 30),
             nameLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             nameLabel.topAnchor.constraint(equalTo: topAnchor, constant: 10),
-            
+        
+            datePickerView.centerXAnchor.constraint(equalTo: centerXAnchor),
+            datePickerView.topAnchor.constraint(equalTo: deadlineTV.topAnchor),
+            datePickerView.bottomAnchor.constraint(equalTo: deadlineTV.bottomAnchor)
         ])
     }
     

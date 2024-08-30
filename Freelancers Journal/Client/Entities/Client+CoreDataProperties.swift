@@ -2,7 +2,7 @@
 //  Client+CoreDataProperties.swift
 //  Freelancers Journal
 //
-//  Created by rColeJnr on 29/08/24.
+//  Created by rColeJnr on 30/08/24.
 //
 //
 
@@ -18,9 +18,10 @@ extension Client {
 
     @NSManaged public var name: String?
     @NSManaged public var details: String?
-    @NSManaged public var phone: String?
+    @NSManaged public var number: String?
     @NSManaged public var email: String?
     @NSManaged public var regular: Bool
+    @NSManaged public var project: Project?
 
 }
 

@@ -33,6 +33,6 @@ class ClientViewController: UIViewController, ClientViewProtocol, ClientViewDele
     }
     
     func navigateToCreateClient() {
-        presenter?.router?.createClientModule(from: self)
+        presenter?.router?.createClientModule(from: self, for: (presenter?.project)!)
     }
 }

@@ -17,10 +17,30 @@ extension Project {
     }
 
     @NSManaged public var name: String?
-    @NSManaged public var price: Double
-    @NSManaged public var date: Date?
-    @NSManaged public var task: FjTask?
+    @NSManaged public var details: String?
+    @NSManaged public var deadline: String?
+    @NSManaged public var priority: Bool
+    @NSManaged public var difficulty: String?
+    @NSManaged public var completed: Bool
     @NSManaged public var client: Client?
+    @NSManaged public var task: NSSet?
+
+}
+
+// MARK: Generated accessors for task
+extension Project {
+
+    @objc(addTaskObject:)
+    @NSManaged public func addToTask(_ value: FjTask)
+
+    @objc(removeTaskObject:)
+    @NSManaged public func removeFromTask(_ value: FjTask)
+
+    @objc(addTask:)
+    @NSManaged public func addToTask(_ values: NSSet)
+
+    @objc(removeTask:)
+    @NSManaged public func removeFromTask(_ values: NSSet)
 
 }
 

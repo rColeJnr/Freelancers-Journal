@@ -37,8 +37,8 @@ class ClientViewCell: UICollectionViewCell {
         ])
     }
     
-    func configure(with client: Client) {
-        name.text = client.name
-    }
+//    func configure(with client: ClientMo) {
+//        name.text = client.name
+//    }
     
 }

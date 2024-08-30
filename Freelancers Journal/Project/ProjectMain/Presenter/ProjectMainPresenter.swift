@@ -9,6 +9,7 @@ import Foundation
 
 protocol ProjectMainPresenterProtocol {
     var view: ProjectMainViewProtocol? { get set }
+    var interactor: ProjectMainInteractorProtocol? { get set }
     var router: ProjectMainRouterProtocol? { get set }
     
     func viewDidLoad()
@@ -21,11 +22,44 @@ class ProjectMainPresenter: ProjectMainPresenterProtocol {
     var router: ProjectMainRouterProtocol?
     
     func viewDidLoad() {
-        view?.showProjects()
-        interactor?.getProjects()
+        print("View did load")
+        view?.showCompletedLoading()
+        view?.showUncompletedLoading()
+        interactor?.getCompletedProjects()
+        interactor?.getUnompletedProjects()
     }
     
     func showProjectDetails(for project: Project) {
-        // todo
+        router?.createProjectDetailsModule()
+    }
+}
+
+extension ProjectMainPresenter: ProjectMainInteractorResponseProtocol {
+    func didGetCompletedProjects(_ projects: [Project]) {
+        view?.hideCompletedLoading()
+        view?.showCompletedProjects(with: projects)
+    }
+    
+    func didGetUncompletedProjects(_ projects: [Project]) {
+        view?.hideUncompletedLoading()
+        view?.showUncompletedProjects(with: projects)
+    }
+    
+    func didSaveProject() {
+        view?.updateProjectList()
+    }
+    
+    func didDeleteProject() {
+        view?.updateProjectList()
+    }
+    
+    func didToggleProjectIsComplete() {
+        view?.updateProjectList()
+    }
+    
+    func onError(_ error: any Error) {
+        view?.hideCompletedLoading()
+        view?.hideUncompletedLoading()
+        view?.showError(error: error)
     }
 }

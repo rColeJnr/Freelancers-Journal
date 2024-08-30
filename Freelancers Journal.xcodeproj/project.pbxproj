@@ -12,7 +12,6 @@
 		750E3DC22C808EEA00D0E9DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 750E3DC12C808EEA00D0E9DD /* Assets.xcassets */; };
 		750E3DC52C808EEA00D0E9DD /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 750E3DC42C808EEA00D0E9DD /* Base */; };
 		750E3DD02C80955500D0E9DD /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750E3DCF2C80955500D0E9DD /* OnboardingViewController.swift */; };
-		750E3DD32C809BC500D0E9DD /* FjCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 750E3DD12C809BC500D0E9DD /* FjCoreData.xcdatamodeld */; };
 		750E3DD72C809BE300D0E9DD /* FjExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750E3DD62C809BE300D0E9DD /* FjExtensions.swift */; };
 		750E3DD92C809C4B00D0E9DD /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750E3DD82C809C4B00D0E9DD /* OnboardingView.swift */; };
 		750E3DDB2C809C8000D0E9DD /* FjIsNewUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750E3DDA2C809C8000D0E9DD /* FjIsNewUser.swift */; };
@@ -25,17 +24,11 @@
 		750E3DED2C80A7E700D0E9DD /* SecondOnboardingViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750E3DEC2C80A7E700D0E9DD /* SecondOnboardingViewCell.swift */; };
 		750E3DF02C80CB4100D0E9DD /* ProjectMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750E3DEF2C80CB4100D0E9DD /* ProjectMainView.swift */; };
 		750E3DF22C80CFC300D0E9DD /* ProjectMainViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750E3DF12C80CFC300D0E9DD /* ProjectMainViewCell.swift */; };
-		750E3DF62C80D2CB00D0E9DD /* Project+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750E3DF42C80D2CB00D0E9DD /* Project+CoreDataClass.swift */; };
-		750E3DF72C80D2CB00D0E9DD /* Project+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750E3DF52C80D2CB00D0E9DD /* Project+CoreDataProperties.swift */; };
 		750E3DFB2C80D79100D0E9DD /* ProjectCreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750E3DFA2C80D79100D0E9DD /* ProjectCreateViewController.swift */; };
 		750E3DFD2C80D7E600D0E9DD /* ProjectCreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750E3DFC2C80D7E600D0E9DD /* ProjectCreateView.swift */; };
 		750E3E002C80DCAC00D0E9DD /* ProjectTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750E3DFF2C80DCAC00D0E9DD /* ProjectTaskViewController.swift */; };
 		750E3E022C80DCC400D0E9DD /* ProjectTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750E3E012C80DCC400D0E9DD /* ProjectTaskView.swift */; };
-		750E3E092C80DDA400D0E9DD /* FjTask+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750E3E072C80DDA400D0E9DD /* FjTask+CoreDataClass.swift */; };
-		750E3E0A2C80DDA400D0E9DD /* FjTask+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750E3E082C80DDA400D0E9DD /* FjTask+CoreDataProperties.swift */; };
 		750E3E0C2C80DDD100D0E9DD /* ProjectTaskViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750E3E0B2C80DDD100D0E9DD /* ProjectTaskViewCell.swift */; };
-		750E3E112C80E23300D0E9DD /* Client+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750E3E0F2C80E23300D0E9DD /* Client+CoreDataClass.swift */; };
-		750E3E122C80E23300D0E9DD /* Client+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750E3E102C80E23300D0E9DD /* Client+CoreDataProperties.swift */; };
 		750E3E142C80E24A00D0E9DD /* ClientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750E3E132C80E24A00D0E9DD /* ClientView.swift */; };
 		750E3E162C80E26200D0E9DD /* ClientViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750E3E152C80E26200D0E9DD /* ClientViewCell.swift */; };
 		750E3E1C2C80E4DF00D0E9DD /* ClientCreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750E3E1B2C80E4DF00D0E9DD /* ClientCreateViewController.swift */; };
@@ -56,9 +49,21 @@
 		750E3E492C811FED00D0E9DD /* ProjectDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750E3E482C811FED00D0E9DD /* ProjectDetailsViewController.swift */; };
 		750E3E4B2C811FF400D0E9DD /* ProjectDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750E3E4A2C811FF400D0E9DD /* ProjectDetailsView.swift */; };
 		750E3E4D2C81393100D0E9DD /* ProjectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750E3E4C2C81393100D0E9DD /* ProjectModel.swift */; };
-		750E3E4F2C813C7400D0E9DD /* Project+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750E3E4E2C813C7400D0E9DD /* Project+CoreDataProperties.swift */; };
 		750E3E512C813D9500D0E9DD /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750E3E502C813D9500D0E9DD /* TaskModel.swift */; };
 		750E3E542C815E3B00D0E9DD /* ClientModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750E3E532C815E3B00D0E9DD /* ClientModel.swift */; };
+		750E3E562C81619B00D0E9DD /* FjCoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750E3E552C81619B00D0E9DD /* FjCoreDataManager.swift */; };
+		750E3E582C81629800D0E9DD /* ProjectDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750E3E572C81629800D0E9DD /* ProjectDataManager.swift */; };
+		750E3E5A2C81633A00D0E9DD /* FjResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750E3E592C81633A00D0E9DD /* FjResult.swift */; };
+		750E3E5E2C81B8D100D0E9DD /* FjProjectResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750E3E5D2C81B8D100D0E9DD /* FjProjectResult.swift */; };
+		750E3E602C81C91B00D0E9DD /* FjError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750E3E5F2C81C91B00D0E9DD /* FjError.swift */; };
+		750E3E632C81CF1400D0E9DD /* ClientCreateInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750E3E622C81CF1400D0E9DD /* ClientCreateInteractor.swift */; };
+		75F82C442C8201CB00EE060A /* FjCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 75F82C422C8201CB00EE060A /* FjCoreData.xcdatamodeld */; };
+		75F82C4B2C8208B300EE060A /* Project+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F82C492C8208B300EE060A /* Project+CoreDataClass.swift */; };
+		75F82C4C2C8208B300EE060A /* Project+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F82C4A2C8208B300EE060A /* Project+CoreDataProperties.swift */; };
+		75F82C4F2C8208D600EE060A /* FjTask+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F82C4D2C8208D600EE060A /* FjTask+CoreDataClass.swift */; };
+		75F82C502C8208D600EE060A /* FjTask+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F82C4E2C8208D600EE060A /* FjTask+CoreDataProperties.swift */; };
+		75F82C532C8208ED00EE060A /* Client+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F82C512C8208ED00EE060A /* Client+CoreDataClass.swift */; };
+		75F82C542C8208ED00EE060A /* Client+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F82C522C8208ED00EE060A /* Client+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,7 +74,6 @@
 		750E3DC42C808EEA00D0E9DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		750E3DC62C808EEA00D0E9DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		750E3DCF2C80955500D0E9DD /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
-		750E3DD22C809BC500D0E9DD /* FjCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FjCoreData.xcdatamodel; sourceTree = "<group>"; };
 		750E3DD62C809BE300D0E9DD /* FjExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FjExtensions.swift; sourceTree = "<group>"; };
 		750E3DD82C809C4B00D0E9DD /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		750E3DDA2C809C8000D0E9DD /* FjIsNewUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FjIsNewUser.swift; sourceTree = "<group>"; };
@@ -82,17 +86,11 @@
 		750E3DEC2C80A7E700D0E9DD /* SecondOnboardingViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondOnboardingViewCell.swift; sourceTree = "<group>"; };
 		750E3DEF2C80CB4100D0E9DD /* ProjectMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectMainView.swift; sourceTree = "<group>"; };
 		750E3DF12C80CFC300D0E9DD /* ProjectMainViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectMainViewCell.swift; sourceTree = "<group>"; };
-		750E3DF42C80D2CB00D0E9DD /* Project+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Project+CoreDataClass.swift"; sourceTree = "<group>"; };
-		750E3DF52C80D2CB00D0E9DD /* Project+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Project+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		750E3DFA2C80D79100D0E9DD /* ProjectCreateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectCreateViewController.swift; sourceTree = "<group>"; };
 		750E3DFC2C80D7E600D0E9DD /* ProjectCreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectCreateView.swift; sourceTree = "<group>"; };
 		750E3DFF2C80DCAC00D0E9DD /* ProjectTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTaskViewController.swift; sourceTree = "<group>"; };
 		750E3E012C80DCC400D0E9DD /* ProjectTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTaskView.swift; sourceTree = "<group>"; };
-		750E3E072C80DDA400D0E9DD /* FjTask+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FjTask+CoreDataClass.swift"; sourceTree = "<group>"; };
-		750E3E082C80DDA400D0E9DD /* FjTask+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FjTask+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		750E3E0B2C80DDD100D0E9DD /* ProjectTaskViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTaskViewCell.swift; sourceTree = "<group>"; };
-		750E3E0F2C80E23300D0E9DD /* Client+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Client+CoreDataClass.swift"; sourceTree = "<group>"; };
-		750E3E102C80E23300D0E9DD /* Client+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Client+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		750E3E132C80E24A00D0E9DD /* ClientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientView.swift; sourceTree = "<group>"; };
 		750E3E152C80E26200D0E9DD /* ClientViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientViewCell.swift; sourceTree = "<group>"; };
 		750E3E1B2C80E4DF00D0E9DD /* ClientCreateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientCreateViewController.swift; sourceTree = "<group>"; };
@@ -113,9 +111,21 @@
 		750E3E482C811FED00D0E9DD /* ProjectDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDetailsViewController.swift; sourceTree = "<group>"; };
 		750E3E4A2C811FF400D0E9DD /* ProjectDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDetailsView.swift; sourceTree = "<group>"; };
 		750E3E4C2C81393100D0E9DD /* ProjectModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectModel.swift; sourceTree = "<group>"; };
-		750E3E4E2C813C7400D0E9DD /* Project+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Project+CoreDataProperties.swift"; path = "Freelancers Journal/Project/Entities/Project+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		750E3E502C813D9500D0E9DD /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
 		750E3E532C815E3B00D0E9DD /* ClientModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientModel.swift; sourceTree = "<group>"; };
+		750E3E552C81619B00D0E9DD /* FjCoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FjCoreDataManager.swift; sourceTree = "<group>"; };
+		750E3E572C81629800D0E9DD /* ProjectDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDataManager.swift; sourceTree = "<group>"; };
+		750E3E592C81633A00D0E9DD /* FjResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FjResult.swift; sourceTree = "<group>"; };
+		750E3E5D2C81B8D100D0E9DD /* FjProjectResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FjProjectResult.swift; sourceTree = "<group>"; };
+		750E3E5F2C81C91B00D0E9DD /* FjError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FjError.swift; sourceTree = "<group>"; };
+		750E3E622C81CF1400D0E9DD /* ClientCreateInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientCreateInteractor.swift; sourceTree = "<group>"; };
+		75F82C432C8201CB00EE060A /* FjCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FjCoreData.xcdatamodel; sourceTree = "<group>"; };
+		75F82C492C8208B300EE060A /* Project+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Project+CoreDataClass.swift"; sourceTree = "<group>"; };
+		75F82C4A2C8208B300EE060A /* Project+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Project+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		75F82C4D2C8208D600EE060A /* FjTask+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FjTask+CoreDataClass.swift"; sourceTree = "<group>"; };
+		75F82C4E2C8208D600EE060A /* FjTask+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FjTask+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		75F82C512C8208ED00EE060A /* Client+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Client+CoreDataClass.swift"; path = "Freelancers Journal/Client/Entities/Client+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		75F82C522C8208ED00EE060A /* Client+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Client+CoreDataProperties.swift"; path = "Freelancers Journal/Client/Entities/Client+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,7 +142,6 @@
 		750E3DAC2C808EE900D0E9DD = {
 			isa = PBXGroup;
 			children = (
-				750E3E4E2C813C7400D0E9DD /* Project+CoreDataProperties.swift */,
 				750E3DB72C808EE900D0E9DD /* Freelancers Journal */,
 				750E3DB62C808EE900D0E9DD /* Products */,
 			);
@@ -161,7 +170,7 @@
 				750E3DC12C808EEA00D0E9DD /* Assets.xcassets */,
 				750E3DC32C808EEA00D0E9DD /* LaunchScreen.storyboard */,
 				750E3DC62C808EEA00D0E9DD /* Info.plist */,
-				750E3DD12C809BC500D0E9DD /* FjCoreData.xcdatamodeld */,
+				75F82C422C8201CB00EE060A /* FjCoreData.xcdatamodeld */,
 			);
 			path = "Freelancers Journal";
 			sourceTree = "<group>";
@@ -204,6 +213,7 @@
 			children = (
 				750E3DD62C809BE300D0E9DD /* FjExtensions.swift */,
 				750E3DDA2C809C8000D0E9DD /* FjIsNewUser.swift */,
+				750E3E552C81619B00D0E9DD /* FjCoreDataManager.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -254,9 +264,12 @@
 		750E3DF32C80D2B500D0E9DD /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				750E3DF42C80D2CB00D0E9DD /* Project+CoreDataClass.swift */,
-				750E3DF52C80D2CB00D0E9DD /* Project+CoreDataProperties.swift */,
+				75F82C492C8208B300EE060A /* Project+CoreDataClass.swift */,
+				75F82C4A2C8208B300EE060A /* Project+CoreDataProperties.swift */,
 				750E3E4C2C81393100D0E9DD /* ProjectModel.swift */,
+				750E3E592C81633A00D0E9DD /* FjResult.swift */,
+				750E3E5D2C81B8D100D0E9DD /* FjProjectResult.swift */,
+				750E3E5F2C81C91B00D0E9DD /* FjError.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -314,8 +327,8 @@
 		750E3E062C80DD7100D0E9DD /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				750E3E072C80DDA400D0E9DD /* FjTask+CoreDataClass.swift */,
-				750E3E082C80DDA400D0E9DD /* FjTask+CoreDataProperties.swift */,
+				75F82C4D2C8208D600EE060A /* FjTask+CoreDataClass.swift */,
+				75F82C4E2C8208D600EE060A /* FjTask+CoreDataProperties.swift */,
 				750E3E502C813D9500D0E9DD /* TaskModel.swift */,
 			);
 			path = Entities;
@@ -324,8 +337,6 @@
 		750E3E0D2C80E18D00D0E9DD /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				750E3E0F2C80E23300D0E9DD /* Client+CoreDataClass.swift */,
-				750E3E102C80E23300D0E9DD /* Client+CoreDataProperties.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -343,6 +354,7 @@
 		750E3E172C80E4A700D0E9DD /* ClientCreate */ = {
 			isa = PBXGroup;
 			children = (
+				750E3E612C81CEFB00D0E9DD /* Interactor */,
 				750E3E522C815E2A00D0E9DD /* Entities */,
 				750E3E3C2C81127B00D0E9DD /* Router */,
 				750E3E3B2C81127300D0E9DD /* Presenter */,
@@ -414,6 +426,7 @@
 			isa = PBXGroup;
 			children = (
 				750E3E292C80E91A00D0E9DD /* ProjectMainInteractor.swift */,
+				750E3E572C81629800D0E9DD /* ProjectDataManager.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -496,9 +509,19 @@
 		750E3E522C815E2A00D0E9DD /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				75F82C512C8208ED00EE060A /* Client+CoreDataClass.swift */,
+				75F82C522C8208ED00EE060A /* Client+CoreDataProperties.swift */,
 				750E3E532C815E3B00D0E9DD /* ClientModel.swift */,
 			);
 			path = Entities;
+			sourceTree = "<group>";
+		};
+		750E3E612C81CEFB00D0E9DD /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				750E3E622C81CF1400D0E9DD /* ClientCreateInteractor.swift */,
+			);
+			path = Interactor;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -578,46 +601,51 @@
 				750E3DD02C80955500D0E9DD /* OnboardingViewController.swift in Sources */,
 				750E3DD72C809BE300D0E9DD /* FjExtensions.swift in Sources */,
 				750E3E512C813D9500D0E9DD /* TaskModel.swift in Sources */,
-				750E3E112C80E23300D0E9DD /* Client+CoreDataClass.swift in Sources */,
+				75F82C4B2C8208B300EE060A /* Project+CoreDataClass.swift in Sources */,
+				75F82C4C2C8208B300EE060A /* Project+CoreDataProperties.swift in Sources */,
 				750E3E392C8110C500D0E9DD /* ClientPresenter.swift in Sources */,
-				750E3E122C80E23300D0E9DD /* Client+CoreDataProperties.swift in Sources */,
 				750E3DF02C80CB4100D0E9DD /* ProjectMainView.swift in Sources */,
-				750E3E4F2C813C7400D0E9DD /* Project+CoreDataProperties.swift in Sources */,
 				750E3DE52C809EDC00D0E9DD /* ClientViewController.swift in Sources */,
 				750E3E1C2C80E4DF00D0E9DD /* ClientCreateViewController.swift in Sources */,
 				750E3E2D2C80EB7600D0E9DD /* ProjectCreatePresenter.swift in Sources */,
 				750E3DEB2C80A2E100D0E9DD /* FirstOnboardingViewCell.swift in Sources */,
 				750E3DDE2C809D8200D0E9DD /* FjTabBarController.swift in Sources */,
+				750E3E5E2C81B8D100D0E9DD /* FjProjectResult.swift in Sources */,
+				750E3E602C81C91B00D0E9DD /* FjError.swift in Sources */,
 				750E3DE72C809EE500D0E9DD /* StatisticsViewController.swift in Sources */,
-				750E3E092C80DDA400D0E9DD /* FjTask+CoreDataClass.swift in Sources */,
 				750E3E242C80E67600D0E9DD /* ProjectMainRouter.swift in Sources */,
-				750E3E0A2C80DDA400D0E9DD /* FjTask+CoreDataProperties.swift in Sources */,
 				750E3E362C80F03F00D0E9DD /* ClientRouter.swift in Sources */,
 				750E3DFB2C80D79100D0E9DD /* ProjectCreateViewController.swift in Sources */,
+				750E3E582C81629800D0E9DD /* ProjectDataManager.swift in Sources */,
 				750E3E4B2C811FF400D0E9DD /* ProjectDetailsView.swift in Sources */,
 				750E3E472C811FE500D0E9DD /* ProjectDetailsPresenter.swift in Sources */,
 				750E3E402C81144900D0E9DD /* ClientCreateRouter.swift in Sources */,
 				750E3DD92C809C4B00D0E9DD /* OnboardingView.swift in Sources */,
 				750E3E492C811FED00D0E9DD /* ProjectDetailsViewController.swift in Sources */,
+				75F82C442C8201CB00EE060A /* FjCoreData.xcdatamodeld in Sources */,
+				750E3E562C81619B00D0E9DD /* FjCoreDataManager.swift in Sources */,
 				750E3E2F2C80EB8700D0E9DD /* ProjectCreateRouter.swift in Sources */,
+				750E3E632C81CF1400D0E9DD /* ClientCreateInteractor.swift in Sources */,
+				75F82C4F2C8208D600EE060A /* FjTask+CoreDataClass.swift in Sources */,
+				75F82C502C8208D600EE060A /* FjTask+CoreDataProperties.swift in Sources */,
 				750E3E022C80DCC400D0E9DD /* ProjectTaskView.swift in Sources */,
 				750E3E4D2C81393100D0E9DD /* ProjectModel.swift in Sources */,
 				750E3E3E2C8112E200D0E9DD /* ClientCreatePresenter.swift in Sources */,
-				750E3DD32C809BC500D0E9DD /* FjCoreData.xcdatamodeld in Sources */,
 				750E3E2A2C80E91A00D0E9DD /* ProjectMainInteractor.swift in Sources */,
 				750E3E162C80E26200D0E9DD /* ClientViewCell.swift in Sources */,
 				750E3E342C80EF7800D0E9DD /* ProjectTaskPresenter.swift in Sources */,
+				750E3E5A2C81633A00D0E9DD /* FjResult.swift in Sources */,
 				750E3DED2C80A7E700D0E9DD /* SecondOnboardingViewCell.swift in Sources */,
 				750E3E262C80E82000D0E9DD /* ProjectMainPresenter.swift in Sources */,
-				750E3DF62C80D2CB00D0E9DD /* Project+CoreDataClass.swift in Sources */,
 				750E3E142C80E24A00D0E9DD /* ClientView.swift in Sources */,
 				750E3E312C80EE5900D0E9DD /* ProjectTaskRouter.swift in Sources */,
 				750E3E0C2C80DDD100D0E9DD /* ProjectTaskViewCell.swift in Sources */,
 				750E3E542C815E3B00D0E9DD /* ClientModel.swift in Sources */,
-				750E3DF72C80D2CB00D0E9DD /* Project+CoreDataProperties.swift in Sources */,
 				750E3E452C811FD800D0E9DD /* ProjectDetailsRouter.swift in Sources */,
 				750E3E1E2C80E4E900D0E9DD /* ClientCreateView.swift in Sources */,
 				750E3DBB2C808EE900D0E9DD /* SceneDelegate.swift in Sources */,
+				75F82C532C8208ED00EE060A /* Client+CoreDataClass.swift in Sources */,
+				75F82C542C8208ED00EE060A /* Client+CoreDataProperties.swift in Sources */,
 				750E3DDB2C809C8000D0E9DD /* FjIsNewUser.swift in Sources */,
 				750E3DE32C809ED300D0E9DD /* SettingsViewController.swift in Sources */,
 				750E3DE92C809EEF00D0E9DD /* ProjectMainViewController.swift in Sources */,
@@ -843,12 +871,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		750E3DD12C809BC500D0E9DD /* FjCoreData.xcdatamodeld */ = {
+		75F82C422C8201CB00EE060A /* FjCoreData.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				750E3DD22C809BC500D0E9DD /* FjCoreData.xcdatamodel */,
+				75F82C432C8201CB00EE060A /* FjCoreData.xcdatamodel */,
 			);
-			currentVersion = 750E3DD22C809BC500D0E9DD /* FjCoreData.xcdatamodel */;
+			currentVersion = 75F82C432C8201CB00EE060A /* FjCoreData.xcdatamodel */;
 			name = FjCoreData.xcdatamodeld;
 			path = "/Users/rcolejnr/xCodeProjects/Freelancers Journal/Freelancers Journal/FjCoreData.xcdatamodeld";
 			sourceTree = "<group>";

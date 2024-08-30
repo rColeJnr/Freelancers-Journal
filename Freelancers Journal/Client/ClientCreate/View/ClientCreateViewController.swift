@@ -20,6 +20,7 @@ class ClientCreateViewController: UIViewController, ClientCreateViewProtocol {
         super.viewDidLoad()
         view.backgroundColor = .systemCyan
         setupView(clientCreateView)
+        presenter?.viewDidLoad()
         addDoneButton()
     }
     
@@ -32,6 +33,11 @@ class ClientCreateViewController: UIViewController, ClientCreateViewProtocol {
             return
         }
         // save project to core data
+        var finalProject = presenter?.project
+        finalProject?.client = client
+        
+        presenter?.saveProject(project: finalProject!)
+
         navigationController?.popToRootViewController(animated: true)
     }
 }
