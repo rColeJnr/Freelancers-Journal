@@ -75,6 +75,7 @@
 		75F82C722C8282CD00EE060A /* StatisticsDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F82C712C8282CD00EE060A /* StatisticsDataManager.swift */; };
 		75F82C742C8285C600EE060A /* StatisticsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F82C732C8285C600EE060A /* StatisticsPresenter.swift */; };
 		75F82C762C82870300EE060A /* StatisticsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F82C752C82870300EE060A /* StatisticsRouter.swift */; };
+		75F82C782C828F7800EE060A /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F82C772C828F7800EE060A /* SettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -148,6 +149,7 @@
 		75F82C712C8282CD00EE060A /* StatisticsDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsDataManager.swift; sourceTree = "<group>"; };
 		75F82C732C8285C600EE060A /* StatisticsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsPresenter.swift; sourceTree = "<group>"; };
 		75F82C752C82870300EE060A /* StatisticsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsRouter.swift; sourceTree = "<group>"; };
+		75F82C772C828F7800EE060A /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -275,6 +277,7 @@
 			isa = PBXGroup;
 			children = (
 				750E3DE22C809ED300D0E9DD /* SettingsViewController.swift */,
+				75F82C772C828F7800EE060A /* SettingsView.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -709,6 +712,7 @@
 				750E3E2D2C80EB7600D0E9DD /* ProjectCreatePresenter.swift in Sources */,
 				750E3DEB2C80A2E100D0E9DD /* FirstOnboardingViewCell.swift in Sources */,
 				750E3DDE2C809D8200D0E9DD /* FjTabBarController.swift in Sources */,
+				75F82C782C828F7800EE060A /* SettingsView.swift in Sources */,
 				750E3E5E2C81B8D100D0E9DD /* FjProjectResult.swift in Sources */,
 				750E3E602C81C91B00D0E9DD /* FjError.swift in Sources */,
 				750E3DE72C809EE500D0E9DD /* StatisticsViewController.swift in Sources */,

@@ -9,9 +9,12 @@ import UIKit
 
 class SettingsViewController: UIViewController {
     
+    private let settingsView = SettingsView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemBackground
+        view.backgroundColor = .systemCyan
+        setupView(settingsView)
         title = "Settings"
     }
     
