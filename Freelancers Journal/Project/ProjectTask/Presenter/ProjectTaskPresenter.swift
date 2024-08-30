@@ -10,7 +10,7 @@ import Foundation
 protocol ProjectTaskPresenterProtocol {
     var view: ProjectTaskViewProtocol? { get set }
     var router: ProjectTaskRouterProtocol? { get set }
-    var project: Project? { get set }
+    var project: ProjectModel? { get set }
     
     func viewDidLoad()
 }
@@ -18,7 +18,7 @@ protocol ProjectTaskPresenterProtocol {
 class ProjectTaskPresenter: ProjectTaskPresenterProtocol {
     weak var view: ProjectTaskViewProtocol?
     var router: ProjectTaskRouterProtocol?
-    var project: Project?
+    var project: ProjectModel?
     
     func viewDidLoad() {
         //

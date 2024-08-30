@@ -28,6 +28,10 @@ class ClientCreateViewController: UIViewController, ClientCreateViewProtocol {
     }
     
     @objc private func completeProjectCreation(_ sender : Any) {
+        guard let client = clientCreateView.canCreateClient() else {
+            return
+        }
+        // save project to core data
         navigationController?.popToRootViewController(animated: true)
     }
 }

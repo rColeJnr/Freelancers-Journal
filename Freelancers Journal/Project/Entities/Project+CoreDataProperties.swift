@@ -2,7 +2,7 @@
 //  Project+CoreDataProperties.swift
 //  Freelancers Journal
 //
-//  Created by rColeJnr on 29/08/24.
+//  Created by rColeJnr on 30/08/24.
 //
 //
 
@@ -19,6 +19,8 @@ extension Project {
     @NSManaged public var name: String?
     @NSManaged public var price: Double
     @NSManaged public var date: Date?
+    @NSManaged public var task: FjTask?
+    @NSManaged public var client: Client?
 
 }
 

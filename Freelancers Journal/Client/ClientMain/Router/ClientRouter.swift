@@ -9,7 +9,7 @@ import Foundation
 
 protocol ClientRouterProtocol {
     func createClientModule(from view: ClientViewProtocol)
-    func createModule() -> ClientViewController
+    func createModule(for project: ProjectModel?) -> ClientViewController
 }
 
 class ClientRouter: ClientRouterProtocol {
@@ -22,12 +22,13 @@ class ClientRouter: ClientRouterProtocol {
         }
     }
     
-    func createModule() -> ClientViewController {
+    func createModule(for project: ProjectModel?) -> ClientViewController {
         let vc = ClientViewController()
         var presenter: ClientPresenterProtocol = ClientPresenter()
         let router: ClientRouterProtocol = ClientRouter()
         vc.presenter = presenter
         presenter.view = vc
+        presenter.project = project
         presenter.router = router
         vc.title = "Select a client"
         return vc

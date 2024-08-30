@@ -7,12 +7,18 @@
 
 import UIKit
 
+protocol ProjectTaskViewCellDelegate {
+    func didChangeName(name: String?)
+    func didChangePrice(price: String?)
+}
+
 class ProjectTaskViewCell: UICollectionViewCell {
     static let cellIdentifier = "ProjectTaskViewCell"
+    var delegate: ProjectTaskViewCellDelegate?
     
-    let title = {
+    // MARK: - Views
+    private let title = {
         let view = UILabel()
-        view.text = "Task"
         view.font = .systemFont(ofSize: 20, weight: .medium)
         view.textColor = .white
         view.textAlignment = .left
@@ -20,10 +26,8 @@ class ProjectTaskViewCell: UICollectionViewCell {
         return view
     }()
     
-    let name = {
-        let view = UITextView()
-        view.text = "fdfdfdf"
-        view.isEditable = true
+    private let name = {
+        let view = UITextField()
         view.font = .systemFont(ofSize: 20, weight: .medium)
         view.backgroundColor = .blue
         view.textColor = .white
@@ -32,10 +36,8 @@ class ProjectTaskViewCell: UICollectionViewCell {
         return view
     }()
     
-    let price = {
-        let view = UITextView()
-        view.text = "34554"
-        view.isEditable = true
+    private let price = {
+        let view = UITextField()
         view.font = .systemFont(ofSize: 20, weight: .medium)
         view.backgroundColor = .blue
         view.textColor = .white
@@ -44,10 +46,13 @@ class ProjectTaskViewCell: UICollectionViewCell {
         return view
     }()
     
+    // MARK: - Init
     override init(frame: CGRect) {
         super.init(frame: frame)
         contentView.backgroundColor = .purple
         contentView.layer.cornerRadius = 15
+        name.addTarget(self, action: #selector(onNameChange(_ :)), for: .editingChanged)
+        price.addTarget(self, action: #selector(onPriceChange(_ :)), for: .editingChanged)
         contentView.addSubviews(title, name, price)
         addConstraints()
     }
@@ -76,11 +81,18 @@ class ProjectTaskViewCell: UICollectionViewCell {
         ])
     }
     
-    func configure(with task: FjTask) {
+    // MARK: - Configuration
+    
+    func configure(with task: TaskModel) {
         title.text = task.title
-        name.text = task.name
-        price.text = "\(task.price) $"
     }
     
+    @objc private func onNameChange(_ sender: Any) {
+        delegate?.didChangeName(name: name.text)
+    }
     
+    @objc private func onPriceChange(_ sender: Any) {
+        delegate?.didChangePrice(price: price.text)
+    }
+        
 }

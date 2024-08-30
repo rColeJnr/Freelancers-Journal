@@ -7,9 +7,9 @@
 
 import UIKit
 
-class ProjectCreateView: UIView {    
+class ProjectCreateView: UIView {
     
-    let nameLabel = {
+    private let nameLabel = {
         let view = UILabel()
         view.text = "Name"
         view.font = .systemFont(ofSize: 24, weight: .bold)
@@ -19,7 +19,7 @@ class ProjectCreateView: UIView {
         return view
     }()
     
-    let nameTF = {
+    private let nameTF = {
         let view = UITextField()
         view.font = .systemFont(ofSize: 20, weight: .medium)
         view.backgroundColor = .systemBlue
@@ -30,7 +30,7 @@ class ProjectCreateView: UIView {
         return view
     }()
     
-    let descriptionLabel = {
+    private let descriptionLabel = {
         let view = UILabel()
         view.text = "Description"
         view.font = .systemFont(ofSize: 24, weight: .bold)
@@ -40,7 +40,7 @@ class ProjectCreateView: UIView {
         return view
     }()
     
-    let descritionTV = {
+    private let descritionTV = {
         let view = UITextView()
         view.isEditable = true
         view.font = .systemFont(ofSize: 20, weight: .medium)
@@ -52,7 +52,7 @@ class ProjectCreateView: UIView {
         return view
     }()
     
-    let deadlineLabel = {
+    private let deadlineLabel = {
         let view = UILabel()
         view.text = "Deadline"
         view.font = .systemFont(ofSize: 24, weight: .bold)
@@ -62,7 +62,7 @@ class ProjectCreateView: UIView {
         return view
     }()
     
-    let deadlineTV = {
+    private let deadlineTV = {
         let view = UITextView()
         view.isEditable = false
         view.isUserInteractionEnabled = true
@@ -75,7 +75,7 @@ class ProjectCreateView: UIView {
         return view
     }()
     
-    let priorityLabel = {
+    private let priorityLabel = {
         let view = UILabel()
         view.text = "Priority"
         view.font = .systemFont(ofSize: 24, weight: .bold)
@@ -85,7 +85,7 @@ class ProjectCreateView: UIView {
         return view
     }()
     
-    let priorityYesBtn = {
+    private let priorityYesBtn = {
         var viewConfig = UIButton.Configuration.bordered()
         viewConfig.title = "Yes"
         viewConfig.baseBackgroundColor = .systemRed
@@ -97,7 +97,7 @@ class ProjectCreateView: UIView {
         return view
     }()
         
-    let priorityNoBtn = {
+    private let priorityNoBtn = {
         var viewConfig = UIButton.Configuration.bordered()
         viewConfig.title = "No"
         viewConfig.baseBackgroundColor = .systemRed
@@ -109,7 +109,7 @@ class ProjectCreateView: UIView {
         return view
     }()
     
-    let difficultyLabel = {
+    private let difficultyLabel = {
         let view = UILabel()
         view.text = "Difficulty of execution"
         view.font = .systemFont(ofSize: 24, weight: .bold)
@@ -119,7 +119,7 @@ class ProjectCreateView: UIView {
         return view
     }()
     
-    let diffEasyBtn = {
+    private let diffEasyBtn = {
         var viewConfig = UIButton.Configuration.bordered()
         viewConfig.title = "Easy"
         viewConfig.baseBackgroundColor = .systemGreen
@@ -131,7 +131,7 @@ class ProjectCreateView: UIView {
         return view
     }()
         
-    let diffMediumBtn = {
+    private let diffMediumBtn = {
         var viewConfig = UIButton.Configuration.bordered()
         viewConfig.title = "Medium"
         viewConfig.baseBackgroundColor = .systemOrange
@@ -144,7 +144,7 @@ class ProjectCreateView: UIView {
     }()
     
         
-    let diffHardBtn = {
+    private let diffHardBtn = {
         var viewConfig = UIButton.Configuration.bordered()
         viewConfig.title = "Hard"
         viewConfig.baseBackgroundColor = .systemRed
@@ -156,9 +156,51 @@ class ProjectCreateView: UIView {
         return view
     }()
     
+    
+    @objc private func setPriorityYes(_ sender: Any) {
+        chosenPriority = true
+    } 
+    
+    @objc private func setPriorityNo(_ sender: Any) {
+        chosenPriority = false
+    }
+
+    @objc private func setDiffEasy(_ sender: Any) {
+        chosenDifficulty = "Easy"
+    }
+
+    @objc private func setDiffMedium(_ sender: Any) {
+        chosenDifficulty = "Medium"
+    }
+    
+    @objc private func setDiffHard(_ sender: Any) {
+        chosenDifficulty = "Hard"
+    }
+    
+    private var chosenPriority: Bool? = nil
+    private var chosenDifficulty: String? = nil
+    
+    func canMoveNext() -> ProjectModel? {
+        guard
+            let name = nameTF.text,
+            let description = descritionTV.text,
+            let deadline = deadlineTV.text,
+            let priority = chosenPriority,
+            let difficulty = chosenDifficulty else {
+            return nil
+        }
+        
+        return ProjectModel(name: name, description: description, deadline: deadline, priority: priority, diff: difficulty)
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         translatesAutoresizingMaskIntoConstraints = false
+        priorityYesBtn.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(setPriorityYes(_ :))))
+        priorityNoBtn.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(setPriorityNo(_ :))))
+        diffEasyBtn.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(setDiffEasy(_ :))))
+        diffMediumBtn.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(setDiffMedium(_ :))))
+        diffHardBtn.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(setDiffHard(_ :))))
         addSubviews(nameLabel, nameTF, descriptionLabel, descritionTV, deadlineLabel, deadlineTV, priorityLabel, priorityYesBtn, priorityNoBtn, difficultyLabel, diffEasyBtn, diffMediumBtn, diffHardBtn)
         addConstraints()
     }

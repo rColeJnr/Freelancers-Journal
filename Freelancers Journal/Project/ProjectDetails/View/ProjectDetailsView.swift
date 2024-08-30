@@ -229,7 +229,12 @@ class ProjectDetailsView: UIView {
             client.heightAnchor.constraint(equalToConstant: 40),
             client.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             client.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
-            client.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10)
+            client.bottomAnchor.constraint(equalTo: deleteBtn.topAnchor, constant: -20),
+            
+            deleteBtn.heightAnchor.constraint(equalToConstant: 60),
+            deleteBtn.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            deleteBtn.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
+            deleteBtn.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20),
             
         ])
     }

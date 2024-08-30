@@ -28,7 +28,12 @@ class ProjectTaskViewController: UIViewController, ProjectTaskViewProtocol {
     }
     
     @objc private func navigateToClientModule(_ sender : Any) {
-        presenter?.router?.createClientModule(from: self/*, for: project*/)
+        guard let taskList = projectTaskView.canMoveNext() else {
+            return
+        }
+        presenter?.project?.tasks = taskList
+        print("please \(presenter?.project?.name)")
+        presenter?.router?.createClientModule(from: self, for: (presenter?.project)!)
     }
     
 }

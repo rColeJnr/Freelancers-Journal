@@ -7,18 +7,23 @@
 
 import UIKit
 
-class ProjectTaskView: UIView {
+
+
+class ProjectTaskView: UIView, ProjectTaskViewCellDelegate {
     
-    var taskList: [FjTask] = []
+    var taskList: [TaskModel] = [
+        TaskModel(title: "Task 1", name: nil, price: nil)
+    ]
     
-    let createNewBtn = {
+    private let createNewBtn = {
         let view = UIImageView()
         view.image = UIImage( named: "circle_add_btn")
+        view.isUserInteractionEnabled = true
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
-    let collectionView = {
+    private let collectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
         layout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
@@ -32,6 +37,7 @@ class ProjectTaskView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         translatesAutoresizingMaskIntoConstraints = false
+        createNewBtn.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(createNewTask(_ :))))
         addSubviews(createNewBtn, collectionView)
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -57,11 +63,57 @@ class ProjectTaskView: UIView {
         ])
     }
     
+    private var result: [TaskModel] = []
+    private var taskName: String?
+    private var taskPrice: String?
+    
+    func didChangeName(name: String?) {
+        taskName = name
+    }
+    
+    func didChangePrice(price: String?) {
+        taskPrice = price
+    }
+    
+    @objc private func createNewTask(_ sender: Any) {
+        let count = taskList.count
+        let indexPath = IndexPath(item: count, section: 0)
+        guard let cell = collectionView.dequeueReusableCell(
+            withReuseIdentifier: ProjectTaskViewCell.cellIdentifier,
+            for: indexPath
+        ) as? ProjectTaskViewCell else {
+            fatalError("Unsupported cell")
+        }
+    
+        guard
+            let name = taskName,
+            let price = taskPrice else {
+                return
+            }
+        
+        result.append(TaskModel(title: taskList[count-1].title, name: name, price: price))
+        taskName = nil
+        taskPrice = nil
+        taskList.append(TaskModel(title: "Task \(count+1)", name: nil, price: nil))
+        collectionView.reloadData()
+        
+    }
+    func canMoveNext() -> [TaskModel]? {
+        if taskName == nil || taskPrice == nil {
+            return nil
+        }
+        if taskName!.isEmpty || taskPrice!.isEmpty {
+            return nil
+        }
+        result.append(TaskModel(title: taskList.last?.title, name: taskName!, price: taskPrice!))
+        return result
+    }
+    
 }
 
 extension ProjectTaskView: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return taskList.count+3
+        return taskList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -71,9 +123,11 @@ extension ProjectTaskView: UICollectionViewDelegate, UICollectionViewDataSource,
         ) as? ProjectTaskViewCell else {
             fatalError("Unsupported cell")
         }
-//        let task = taskList[indexPath.row]
-//        cell.configure(with: task)
         
+        let task = taskList[indexPath.row]
+        cell.delegate = self
+        cell.configure(with: task)
+    
         return cell
     }
     
@@ -81,10 +135,5 @@ extension ProjectTaskView: UICollectionViewDelegate, UICollectionViewDataSource,
         let width = collectionView.bounds.width-30
         return CGSize(width: width, height: 150)
     }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        // selection
-    }
-    
     
 }

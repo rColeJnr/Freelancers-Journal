@@ -55,6 +55,10 @@
 		750E3E472C811FE500D0E9DD /* ProjectDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750E3E462C811FE500D0E9DD /* ProjectDetailsPresenter.swift */; };
 		750E3E492C811FED00D0E9DD /* ProjectDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750E3E482C811FED00D0E9DD /* ProjectDetailsViewController.swift */; };
 		750E3E4B2C811FF400D0E9DD /* ProjectDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750E3E4A2C811FF400D0E9DD /* ProjectDetailsView.swift */; };
+		750E3E4D2C81393100D0E9DD /* ProjectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750E3E4C2C81393100D0E9DD /* ProjectModel.swift */; };
+		750E3E4F2C813C7400D0E9DD /* Project+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750E3E4E2C813C7400D0E9DD /* Project+CoreDataProperties.swift */; };
+		750E3E512C813D9500D0E9DD /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750E3E502C813D9500D0E9DD /* TaskModel.swift */; };
+		750E3E542C815E3B00D0E9DD /* ClientModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750E3E532C815E3B00D0E9DD /* ClientModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -108,6 +112,10 @@
 		750E3E462C811FE500D0E9DD /* ProjectDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDetailsPresenter.swift; sourceTree = "<group>"; };
 		750E3E482C811FED00D0E9DD /* ProjectDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDetailsViewController.swift; sourceTree = "<group>"; };
 		750E3E4A2C811FF400D0E9DD /* ProjectDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDetailsView.swift; sourceTree = "<group>"; };
+		750E3E4C2C81393100D0E9DD /* ProjectModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectModel.swift; sourceTree = "<group>"; };
+		750E3E4E2C813C7400D0E9DD /* Project+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Project+CoreDataProperties.swift"; path = "Freelancers Journal/Project/Entities/Project+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		750E3E502C813D9500D0E9DD /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
+		750E3E532C815E3B00D0E9DD /* ClientModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +132,7 @@
 		750E3DAC2C808EE900D0E9DD = {
 			isa = PBXGroup;
 			children = (
+				750E3E4E2C813C7400D0E9DD /* Project+CoreDataProperties.swift */,
 				750E3DB72C808EE900D0E9DD /* Freelancers Journal */,
 				750E3DB62C808EE900D0E9DD /* Products */,
 			);
@@ -247,6 +256,7 @@
 			children = (
 				750E3DF42C80D2CB00D0E9DD /* Project+CoreDataClass.swift */,
 				750E3DF52C80D2CB00D0E9DD /* Project+CoreDataProperties.swift */,
+				750E3E4C2C81393100D0E9DD /* ProjectModel.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -306,6 +316,7 @@
 			children = (
 				750E3E072C80DDA400D0E9DD /* FjTask+CoreDataClass.swift */,
 				750E3E082C80DDA400D0E9DD /* FjTask+CoreDataProperties.swift */,
+				750E3E502C813D9500D0E9DD /* TaskModel.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -332,6 +343,7 @@
 		750E3E172C80E4A700D0E9DD /* ClientCreate */ = {
 			isa = PBXGroup;
 			children = (
+				750E3E522C815E2A00D0E9DD /* Entities */,
 				750E3E3C2C81127B00D0E9DD /* Router */,
 				750E3E3B2C81127300D0E9DD /* Presenter */,
 				750E3E192C80E4BB00D0E9DD /* View */,
@@ -481,6 +493,14 @@
 			path = Router;
 			sourceTree = "<group>";
 		};
+		750E3E522C815E2A00D0E9DD /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				750E3E532C815E3B00D0E9DD /* ClientModel.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -557,10 +577,12 @@
 				750E3E002C80DCAC00D0E9DD /* ProjectTaskViewController.swift in Sources */,
 				750E3DD02C80955500D0E9DD /* OnboardingViewController.swift in Sources */,
 				750E3DD72C809BE300D0E9DD /* FjExtensions.swift in Sources */,
+				750E3E512C813D9500D0E9DD /* TaskModel.swift in Sources */,
 				750E3E112C80E23300D0E9DD /* Client+CoreDataClass.swift in Sources */,
 				750E3E392C8110C500D0E9DD /* ClientPresenter.swift in Sources */,
 				750E3E122C80E23300D0E9DD /* Client+CoreDataProperties.swift in Sources */,
 				750E3DF02C80CB4100D0E9DD /* ProjectMainView.swift in Sources */,
+				750E3E4F2C813C7400D0E9DD /* Project+CoreDataProperties.swift in Sources */,
 				750E3DE52C809EDC00D0E9DD /* ClientViewController.swift in Sources */,
 				750E3E1C2C80E4DF00D0E9DD /* ClientCreateViewController.swift in Sources */,
 				750E3E2D2C80EB7600D0E9DD /* ProjectCreatePresenter.swift in Sources */,
@@ -579,6 +601,7 @@
 				750E3E492C811FED00D0E9DD /* ProjectDetailsViewController.swift in Sources */,
 				750E3E2F2C80EB8700D0E9DD /* ProjectCreateRouter.swift in Sources */,
 				750E3E022C80DCC400D0E9DD /* ProjectTaskView.swift in Sources */,
+				750E3E4D2C81393100D0E9DD /* ProjectModel.swift in Sources */,
 				750E3E3E2C8112E200D0E9DD /* ClientCreatePresenter.swift in Sources */,
 				750E3DD32C809BC500D0E9DD /* FjCoreData.xcdatamodeld in Sources */,
 				750E3E2A2C80E91A00D0E9DD /* ProjectMainInteractor.swift in Sources */,
@@ -590,6 +613,7 @@
 				750E3E142C80E24A00D0E9DD /* ClientView.swift in Sources */,
 				750E3E312C80EE5900D0E9DD /* ProjectTaskRouter.swift in Sources */,
 				750E3E0C2C80DDD100D0E9DD /* ProjectTaskViewCell.swift in Sources */,
+				750E3E542C815E3B00D0E9DD /* ClientModel.swift in Sources */,
 				750E3DF72C80D2CB00D0E9DD /* Project+CoreDataProperties.swift in Sources */,
 				750E3E452C811FD800D0E9DD /* ProjectDetailsRouter.swift in Sources */,
 				750E3E1E2C80E4E900D0E9DD /* ClientCreateView.swift in Sources */,

@@ -10,6 +10,7 @@ import Foundation
 protocol ClientPresenterProtocol {
     var view: ClientViewProtocol? { get set }
     var router: ClientRouterProtocol? { get set }
+    var project: ProjectModel? { get set }
     
     func viewDidLoad()
 }
@@ -17,6 +18,7 @@ protocol ClientPresenterProtocol {
 class ClientPresenter: ClientPresenterProtocol {
     weak var view: ClientViewProtocol?
     var router: ClientRouterProtocol?
+    var project: ProjectModel?
     
     func viewDidLoad() {
         //

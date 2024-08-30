@@ -30,7 +30,10 @@ class ProjectCreateViewController: UIViewController, ProjectCreateViewProtocol {
     }
     
     @objc private func navigateToTasks(_ sender : Any) {
-        presenter?.router?.createProjectTaskModule(from: self/*, for: project*/)
+        guard let project = projectCreateView.canMoveNext() else {
+            return
+        }
+        presenter?.router?.createProjectTaskModule(from: self, for: project)
     }
     
 }

@@ -17,7 +17,7 @@ class FjTabBarController: UITabBarController {
     private func setupTabs() {
         let projectVc = ProjectMainRouter().createModule()
         let statisticsVc = StatisticsViewController()
-        let clientsVc = ClientRouter().createModule()
+        let clientsVc = ClientRouter().createModule(for: nil)
         let settingsVc = SettingsViewController()
         
         projectVc.navigationItem.largeTitleDisplayMode = .inline

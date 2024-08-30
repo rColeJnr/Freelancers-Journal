@@ -8,14 +8,14 @@
 import Foundation
 
 protocol ProjectCreateRouterProtocol {
-    func createProjectTaskModule(from view: ProjectCreateViewProtocol /*for project: Project*/)
+    func createProjectTaskModule(from view: ProjectCreateViewProtocol, for project: ProjectModel)
     func createModule() -> ProjectCreateViewController
 }
 
 class ProjectCreateRouter: ProjectCreateRouterProtocol {
     
-    func createProjectTaskModule(from view: ProjectCreateViewProtocol/* for project: Project*/) {
-        let taskVc = ProjectTaskRouter().createModule(/*for: project*/)
+    func createProjectTaskModule(from view: ProjectCreateViewProtocol, for project: ProjectModel) {
+        let taskVc = ProjectTaskRouter().createModule(for: project)
         
         if let sourceView = view as? ProjectCreateViewController {
             sourceView.navigationController?.pushViewController(taskVc, animated: true)

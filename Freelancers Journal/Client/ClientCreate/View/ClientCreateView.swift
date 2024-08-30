@@ -134,12 +134,37 @@ class ClientCreateView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         translatesAutoresizingMaskIntoConstraints = false
+        regularYesBtn.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(setRegularYes(_ :))))
+        regularNoBtn.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(setRegularNo(_ :))))
         addSubviews(nameLabel, nameTF, descriptionLabel, descritionTV, phoneLabel, phoneTV, emailLabel, emailTV, regularLabel, regularNoBtn, regularYesBtn)
         addConstraints()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    @objc private func setRegularYes(_ sender: Any) {
+        chosenRegular = true
+    }
+    
+    @objc private func setRegularNo(_ sender: Any) {
+        chosenRegular = false
+    }
+    
+    private var chosenRegular: Bool? = nil
+    
+    func canCreateClient() -> ClientModel? {
+        guard
+            let name = nameTF.text,
+            let description = descritionTV.text,
+            let phone = phoneTV.text,
+            let email = emailTV.text,
+            let regular = chosenRegular else {
+            return nil
+        }
+        
+        return ClientModel(name: name, description: description, number: phone, email: email, regular: regular)
     }
     
     private func addConstraints() {
