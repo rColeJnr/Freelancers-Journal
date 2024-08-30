@@ -11,7 +11,7 @@ protocol ProjectMainRouterProtocol: AnyObject {
     
     func createProjectCreateModule(from view: ProjectMainViewProtocol)
     
-    func createProjectDetailsModule()
+    func createProjectDetailsModule(from view: ProjectMainViewProtocol, for project: Project)
     
     func createModule() -> ProjectMainViewController
     
@@ -27,8 +27,12 @@ class ProjectMainRouter: ProjectMainRouterProtocol {
         }
     }
     
-    func createProjectDetailsModule() {
-        //
+    func createProjectDetailsModule(from view: ProjectMainViewProtocol, for project: Project) {
+        let detailsVc = ProjectDetailsRouter().createModule(for: project)
+        
+        if let sourceView = view as? ProjectMainViewController {
+            sourceView.navigationController?.pushViewController(detailsVc, animated: true)
+        }
     }
     
     func createModule() -> ProjectMainViewController {
@@ -44,6 +48,7 @@ class ProjectMainRouter: ProjectMainRouterProtocol {
         interactor.presenter = presenter
         interactor.projectDataManager = projectDataManager
         presenter.router = router
+        viewController.title = "My Projects"
         return viewController
     }
 }

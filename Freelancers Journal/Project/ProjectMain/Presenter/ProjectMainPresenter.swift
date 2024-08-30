@@ -13,7 +13,6 @@ protocol ProjectMainPresenterProtocol {
     var router: ProjectMainRouterProtocol? { get set }
     
     func viewDidLoad()
-    func showProjectDetails(for project: Project)
 }
 
 class ProjectMainPresenter: ProjectMainPresenterProtocol {
@@ -22,16 +21,12 @@ class ProjectMainPresenter: ProjectMainPresenterProtocol {
     var router: ProjectMainRouterProtocol?
     
     func viewDidLoad() {
-        print("View did load")
         view?.showCompletedLoading()
         view?.showUncompletedLoading()
         interactor?.getCompletedProjects()
-        interactor?.getUnompletedProjects()
+        interactor?.getUncompletedProjects()
     }
-    
-    func showProjectDetails(for project: Project) {
-        router?.createProjectDetailsModule()
-    }
+
 }
 
 extension ProjectMainPresenter: ProjectMainInteractorResponseProtocol {
@@ -43,18 +38,6 @@ extension ProjectMainPresenter: ProjectMainInteractorResponseProtocol {
     func didGetUncompletedProjects(_ projects: [Project]) {
         view?.hideUncompletedLoading()
         view?.showUncompletedProjects(with: projects)
-    }
-    
-    func didSaveProject() {
-        view?.updateProjectList()
-    }
-    
-    func didDeleteProject() {
-        view?.updateProjectList()
-    }
-    
-    func didToggleProjectIsComplete() {
-        view?.updateProjectList()
     }
     
     func onError(_ error: any Error) {

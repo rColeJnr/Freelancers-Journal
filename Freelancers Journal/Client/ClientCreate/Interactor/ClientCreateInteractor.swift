@@ -30,7 +30,7 @@ class ClientCreateInteractor: ClientCreateInteractorProtocol {
             try projectDataManager?.saveProject(project: project)
         } catch {
             print("Error saving to core data \(error.localizedDescription)")
-//            self.presenter?.onError(FjError.failedToSaveToCoreData)
+//
             return
         }
     }

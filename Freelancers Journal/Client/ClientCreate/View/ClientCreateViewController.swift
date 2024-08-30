@@ -20,7 +20,6 @@ class ClientCreateViewController: UIViewController, ClientCreateViewProtocol {
         super.viewDidLoad()
         view.backgroundColor = .systemCyan
         setupView(clientCreateView)
-        presenter?.viewDidLoad()
         addDoneButton()
     }
     

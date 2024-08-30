@@ -31,14 +31,21 @@ class ClientViewCell: UICollectionViewCell {
     
     private func addConstraints() {
         NSLayoutConstraint.activate([
-            name.widthAnchor.constraint(equalToConstant: 90),
-            name.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+     
+            name.topAnchor.constraint(equalTo: contentView.topAnchor),
+            name.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+            name.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             name.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
         ])
     }
     
-//    func configure(with client: ClientMo) {
-//        name.text = client.name
-//    }
+    func configure(with client: Client) {
+        name.text = "   \(client.name!)"
+        if client.regular {
+            name.backgroundColor = UIColor(patternImage: UIImage(named: "client_regular")!)
+        } else {
+            name.backgroundColor = UIColor(patternImage: UIImage(named: "client_custom")!)
+        }
+    }
     
 }

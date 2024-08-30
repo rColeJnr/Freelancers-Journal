@@ -12,15 +12,11 @@ protocol ProjectTaskPresenterProtocol {
     var router: ProjectTaskRouterProtocol? { get set }
     var project: ProjectModel? { get set }
     
-    func viewDidLoad()
 }
 
 class ProjectTaskPresenter: ProjectTaskPresenterProtocol {
     weak var view: ProjectTaskViewProtocol?
     var router: ProjectTaskRouterProtocol?
     var project: ProjectModel?
-    
-    func viewDidLoad() {
-        //
-    }
+
 }

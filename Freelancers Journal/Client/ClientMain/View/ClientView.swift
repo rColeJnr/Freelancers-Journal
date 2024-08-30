@@ -13,7 +13,7 @@ protocol ClientViewDelegate {
 
 class ClientView: UIView {
     
-    var clients: [ClientModel] = []
+    var clients: [Client] = []
     var delegate: ClientViewDelegate?
     
     // MARK: - VIEWS
@@ -59,6 +59,7 @@ class ClientView: UIView {
         let view = UICollectionView(frame: .zero, collectionViewLayout: layout)
         view.translatesAutoresizingMaskIntoConstraints = false
         view.register(ClientViewCell.self, forCellWithReuseIdentifier: ClientViewCell.cellIdentifier)
+        view.backgroundColor = .systemCyan
         view.isHidden = true
         return view
     }()
@@ -72,6 +73,8 @@ class ClientView: UIView {
         translatesAutoresizingMaskIntoConstraints = false
         addSubviews(image, title, descriptionTV, createNewBtn, collectionView)
         createNewBtn.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onCreateNewBtnClick(_ :))))
+        collectionView.delegate = self
+        collectionView.dataSource = self
         addConstraints()
     }
     
@@ -105,6 +108,15 @@ class ClientView: UIView {
         ])
     }
     
+    func configureCollectionView(with clients: [Client]) {
+        image.isHidden = true
+        collectionView.isHidden = false
+        descriptionTV.isHidden = true
+        title.isHidden = true
+        self.clients = clients
+        collectionView.reloadData()
+    }
+    
 }
 
 extension ClientView: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -120,19 +132,14 @@ extension ClientView: UICollectionViewDelegate, UICollectionViewDataSource, UICo
             fatalError("Unsupported cell")
         }
         let client = clients[indexPath.row]
-//        cell.configure(with: client)
+        cell.configure(with: client)
         
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = collectionView.bounds.width-30
-        return CGSize(width: width, height: 90)
+        let width = collectionView.bounds.width-70
+        return CGSize(width: width, height: 70)
     }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        // selection
-    }
-    
     
 }

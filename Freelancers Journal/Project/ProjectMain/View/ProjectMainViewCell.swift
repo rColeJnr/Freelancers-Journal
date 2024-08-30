@@ -33,6 +33,7 @@ class ProjectMainViewCell: UICollectionViewCell {
         view.font = .systemFont(ofSize: 20, weight: .medium)
         view.textColor = .white
         view.textAlignment = .left
+        view.adjustsFontSizeToFitWidth = true
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -40,6 +41,8 @@ class ProjectMainViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         contentView.addSubviews(name, date, price)
+        contentView.backgroundColor = .systemBlue
+        contentView.layer.cornerRadius = 15
         addConstraints()
     }
     
@@ -49,28 +52,36 @@ class ProjectMainViewCell: UICollectionViewCell {
     
     private func addConstraints() {
         NSLayoutConstraint.activate([
-            name.widthAnchor.constraint(equalToConstant: 350),
+            
+            price.heightAnchor.constraint(equalToConstant: 30),
+//            price.widthAnchor.constraint(equalToConstant: 150),
+            price.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+            price.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant:-10),
+            
             name.heightAnchor.constraint(equalToConstant: 30),
             name.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 5),
-            name.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+//            name.trailingAnchor.constraint(equalTo: price.leadingAnchor),
+            name.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
             
-            date.widthAnchor.constraint(equalToConstant: 350),
             date.heightAnchor.constraint(equalToConstant: 30),
-            date.topAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 5),
-            date.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            date.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -5),
+//            date.trailingAnchor.constraint(equalTo: price.leadingAnchor),
+            date.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
             
-            price.widthAnchor.constraint(equalToConstant: 250),
-            price.heightAnchor.constraint(equalToConstant: 30),
-            price.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
-            price.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-        
         ])
     }
     
     func configure(with project: Project) {
+        let priceText = {
+            var sum: Float = 0
+            for value in project.task! {
+                sum += (value as! FjTask).price
+            }
+            return sum
+        }()
         name.text = project.name
-//        date.text = project.deadline?.description
-//        price.text = "\(project.price) $"
+        date.text = project.deadline
+        price.text = "\(String(describing: priceText)) $"
     }
     
 }

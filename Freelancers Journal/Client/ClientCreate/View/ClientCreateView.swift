@@ -9,7 +9,7 @@ import UIKit
 
 class ClientCreateView: UIView {
     
-    let nameLabel = {
+    private let nameLabel = {
         let view = UILabel()
         view.text = "Name"
         view.font = .systemFont(ofSize: 24, weight: .bold)
@@ -19,7 +19,7 @@ class ClientCreateView: UIView {
         return view
     }()
     
-    let nameTF = {
+    private let nameTF = {
         let view = UITextField()
         view.font = .systemFont(ofSize: 20, weight: .medium)
         view.backgroundColor = .systemBlue
@@ -31,7 +31,7 @@ class ClientCreateView: UIView {
         return view
     }()
     
-    let descriptionLabel = {
+    private let descriptionLabel = {
         let view = UILabel()
         view.text = "Description"
         view.font = .systemFont(ofSize: 24, weight: .bold)
@@ -41,7 +41,7 @@ class ClientCreateView: UIView {
         return view
     }()
     
-    let descritionTV = {
+    private let descritionTV = {
         let view = UITextView()
         view.isEditable = true
         view.font = .systemFont(ofSize: 20, weight: .medium)
@@ -53,7 +53,7 @@ class ClientCreateView: UIView {
         return view
     }()
     
-    let phoneLabel = {
+    private let phoneLabel = {
         let view = UILabel()
         view.text = "Phone number"
         view.font = .systemFont(ofSize: 24, weight: .bold)
@@ -63,7 +63,7 @@ class ClientCreateView: UIView {
         return view
     }()
     
-    let phoneTV = {
+    private let phoneTV = {
         let view = UITextField()
         view.font = .systemFont(ofSize: 20, weight: .medium)
         view.backgroundColor = .systemBlue
@@ -75,7 +75,7 @@ class ClientCreateView: UIView {
         return view
     }()
     
-    let emailLabel = {
+    private let emailLabel = {
         let view = UILabel()
         view.text = "E-mail"
         view.font = .systemFont(ofSize: 24, weight: .bold)
@@ -85,7 +85,7 @@ class ClientCreateView: UIView {
         return view
     }()
     
-    let emailTV = {
+    private let emailTV = {
         let view = UITextField()
         view.font = .systemFont(ofSize: 20, weight: .medium)
         view.backgroundColor = .systemBlue
@@ -97,7 +97,7 @@ class ClientCreateView: UIView {
         return view
     }()
       
-    let regularLabel = {
+    private let regularLabel = {
         let view = UILabel()
         view.text = "A regular customer"
         view.font = .systemFont(ofSize: 24, weight: .bold)
@@ -107,7 +107,7 @@ class ClientCreateView: UIView {
         return view
     }()
     
-    let regularYesBtn = {
+    private let regularYesBtn = {
         var viewConfig = UIButton.Configuration.bordered()
         viewConfig.title = "Yes"
         viewConfig.baseBackgroundColor = .systemGreen
@@ -119,7 +119,7 @@ class ClientCreateView: UIView {
         return view
     }()
         
-    let regularNoBtn = {
+    private let regularNoBtn = {
         var viewConfig = UIButton.Configuration.bordered()
         viewConfig.title = "No"
         viewConfig.baseBackgroundColor = .systemOrange
@@ -143,6 +143,8 @@ class ClientCreateView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    // MARK: - View configuration
     
     @objc private func setRegularYes(_ sender: Any) {
         chosenRegular = true

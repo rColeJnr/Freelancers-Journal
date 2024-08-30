@@ -9,6 +9,10 @@ import UIKit
 
 protocol ProjectMainViewDelegate {
     func navigateToCreateProject()
+    func createProjectDetailsModule(for project: Project)
+    
+    func showCompletedProjects()
+    func showInProgressProjects()
 }
 
 class ProjectMainView: UIView {
@@ -17,6 +21,33 @@ class ProjectMainView: UIView {
     var delegate: ProjectMainViewDelegate?
     
     // MARK: - VIEWS
+    
+    private let inProgressBtn = {
+        var viewConfig = UIButton.Configuration.bordered()
+        viewConfig.title = "In Progress"
+        viewConfig.baseForegroundColor = .white
+        let view = UIButton(configuration: viewConfig)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.isUserInteractionEnabled = true
+        view.isHidden = true
+        view.backgroundColor = .blue
+        view.isEnabled = false
+        view.layer.cornerRadius = 15
+        return view
+    }()
+    
+    private let completedBtn = {
+        var viewConfig = UIButton.Configuration.bordered()
+        viewConfig.title = "Completed"
+        viewConfig.baseForegroundColor = .white
+        let view = UIButton(configuration: viewConfig)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.isUserInteractionEnabled = true
+        view.isHidden = true
+        view.layer.cornerRadius = 15
+        return view
+    }()
+    
     private let image = {
         let view = UIImageView()
         view.image = UIImage( named: "notebook")
@@ -64,15 +95,15 @@ class ProjectMainView: UIView {
         return view
     }()
     
-    @objc private func onCreateNewBtnClick(_ sender: Any) {
-        delegate?.navigateToCreateProject()
-    }
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
-        translatesAutoresizingMaskIntoConstraints = false
-        addSubviews(image, title, descriptionTV, createNewBtn, collectionView)
+        translatesAutoresizingMaskIntoConstraints = false    
         createNewBtn.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onCreateNewBtnClick(_ :))))
+        completedBtn.addTarget(self, action: #selector(onCompletedBtnClick), for: .touchDown)
+        inProgressBtn.addTarget(self, action: #selector(onInProgressBtnClick), for: .touchDown)
+        
+        addSubviews(inProgressBtn, completedBtn, image, title, descriptionTV, createNewBtn, collectionView)
+        
         collectionView.delegate = self
         collectionView.dataSource = self
         addConstraints()
@@ -84,12 +115,22 @@ class ProjectMainView: UIView {
     
     private func addConstraints() {
         NSLayoutConstraint.activate([
+            inProgressBtn.widthAnchor.constraint(equalToConstant: 170),
+            inProgressBtn.heightAnchor.constraint(equalToConstant: 40),
+            inProgressBtn.topAnchor.constraint(equalTo: topAnchor, constant: 10),
+            inProgressBtn.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            
+            completedBtn.widthAnchor.constraint(equalToConstant: 170),
+            completedBtn.heightAnchor.constraint(equalToConstant: 40),
+            completedBtn.topAnchor.constraint(equalTo: topAnchor, constant: 10),
+            completedBtn.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
+            
             createNewBtn.heightAnchor.constraint(equalToConstant: 70),
             createNewBtn.widthAnchor.constraint(equalToConstant: 70),
             createNewBtn.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -120),
             createNewBtn.centerXAnchor.constraint(equalTo: centerXAnchor),
             
-            collectionView.topAnchor.constraint(equalTo: topAnchor),
+            collectionView.topAnchor.constraint(equalTo: inProgressBtn.bottomAnchor, constant: 10),
             collectionView.leadingAnchor.constraint(equalTo: leadingAnchor),
             collectionView.trailingAnchor.constraint(equalTo: trailingAnchor),
             collectionView.bottomAnchor.constraint(equalTo: createNewBtn.topAnchor, constant: -10),
@@ -108,9 +149,38 @@ class ProjectMainView: UIView {
         ])
     }
     
+    @objc private func onCreateNewBtnClick(_ sender: Any) {
+        delegate?.navigateToCreateProject()
+    }
+    
+    @objc private func onCompletedBtnClick(_ sender: UIButton) {
+        completedBtn.backgroundColor = .blue
+        inProgressBtn.backgroundColor = .systemTeal
+        completedBtn.isEnabled = false
+        inProgressBtn.isEnabled = true
+        delegate?.showCompletedProjects()
+    }
+    
+    @objc private func onInProgressBtnClick(_ sender: UIButton) {
+        inProgressBtn.backgroundColor = .blue
+        completedBtn.backgroundColor = .systemTeal
+        completedBtn.isEnabled = true
+        inProgressBtn.isEnabled = false
+        delegate?.showInProgressProjects()
+    }
+    
+    func selectInProgressBtn() {
+        completedBtn.backgroundColor = .systemTeal
+        inProgressBtn.backgroundColor = .blue
+        completedBtn.isEnabled = true
+        inProgressBtn.isEnabled = false
+    }
+    
     func configureCollectionView(with projects: [Project]) {
         self.projects = projects
         collectionView.isHidden = false
+        inProgressBtn.isHidden = false
+        completedBtn.isHidden = false
         image.isHidden = true
         descriptionTV.isHidden = true
         title.isHidden = true
@@ -138,11 +208,12 @@ extension ProjectMainView: UICollectionViewDelegate, UICollectionViewDataSource,
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = collectionView.bounds.width-30
-        return CGSize(width: width, height: 90)
+        return CGSize(width: width, height: 70)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        // selection
+        let project = projects[indexPath.row]
+        delegate?.createProjectDetailsModule(for: project)
     }
     
     

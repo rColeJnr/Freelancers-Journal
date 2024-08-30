@@ -13,7 +13,6 @@ protocol ClientCreatePresenterProtocol {
     var router: ClientCreateRouterProtocol? { get set }
     var project: ProjectModel? { get set }
     
-    func viewDidLoad()
     func saveProject(project: ProjectModel)
 
 }
@@ -24,9 +23,7 @@ class ClientCreatePresenter: ClientCreatePresenterProtocol {
     var router: ClientCreateRouterProtocol?
     var project: ProjectModel?
     
-    func viewDidLoad() {
-        //
-    }
+     
     func saveProject(project: ProjectModel) {
         interactor?.saveProject(project: project)
     }

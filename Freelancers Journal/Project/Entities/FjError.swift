@@ -9,4 +9,5 @@ import Foundation
 
 enum FjError: Error {
     case failedToSaveToCoreData
+    case failedToFetchCoreDataObject
 }

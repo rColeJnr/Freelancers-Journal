@@ -13,19 +13,14 @@ protocol ProjectMainInteractorProtocol {
     
     // Presenter -> Interactor
     func getCompletedProjects()
-    func getUnompletedProjects()
-    func deleteProject(project: Project)
-    func toggleProjectIsComplete(project: Project, isComplete: Bool)
+    func getUncompletedProjects()
+
 }
 
 protocol ProjectMainInteractorResponseProtocol {
     func didGetCompletedProjects(_ projects: [Project])
     func didGetUncompletedProjects(_ projects: [Project])
  
-    func didSaveProject()
-    func didDeleteProject()
-    func didToggleProjectIsComplete()
-
     func onError(_ error: Error)
 }
 
@@ -46,7 +41,7 @@ class ProjectMainInteractor: ProjectMainInteractorProtocol {
         }
     }
     
-    func getUnompletedProjects() {
+    func getUncompletedProjects() {
         projectDataManager?.getUncompletedProjects{ [weak self] FjProjectResult in
             switch FjProjectResult {
             case .success(let projects):
@@ -67,18 +62,7 @@ class ProjectMainInteractor: ProjectMainInteractorProtocol {
 }
 
 extension ProjectMainInteractor: ProjectDataManagerResponseProtocol {
-    func didSaveProject() {
-        presenter?.didSaveProject()
-    }
-    
-    func didDeleteProject() {
-        presenter?.didDeleteProject()
-    }
-    
-    func didToggleProjectIsComplete() {
-        presenter?.didToggleProjectIsComplete()
-    }
-    
+
     func didGetCompletedProjects(_ projects: [Project]) {
         presenter?.didGetCompletedProjects(projects)
     }

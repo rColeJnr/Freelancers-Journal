@@ -23,15 +23,20 @@ class ClientRouter: ClientRouterProtocol {
     }
     
     func createModule(for project: ProjectModel?) -> ClientViewController {
-        let vc = ClientViewController()
-        var presenter: ClientPresenterProtocol = ClientPresenter()
+        let view = ClientViewController()
+        var interactor: ClientInteractorProtocol & ClientDataManagerResponseProtocol = ClientInteractor()
+        var presenter: ClientPresenterProtocol & ClientInteractorResponseProtocol = ClientPresenter()
+        let clientDataManager: ClientDataManagerProtocol = ClientDataManager()
         let router: ClientRouterProtocol = ClientRouter()
-        vc.presenter = presenter
-        presenter.view = vc
+        view.presenter = presenter
+        presenter.view = view
+        presenter.interactor = interactor
+        interactor.presenter = presenter
+        interactor.clientDataManager = clientDataManager
         presenter.project = project
         presenter.router = router
-        vc.title = "Select a client"
-        return vc
+        view.title = "Select a client"
+        return view
     }
     
 }

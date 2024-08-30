@@ -70,7 +70,6 @@ class ProjectCreateView: UIView {
         view.font = .systemFont(ofSize: 20, weight: .medium)
         view.backgroundColor = .systemBlue
         view.textColor = .white
-        view.text = "Set deadline"
         view.textAlignment = .center
         view.layer.cornerRadius = 15
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -90,23 +89,23 @@ class ProjectCreateView: UIView {
     private let priorityYesBtn = {
         var viewConfig = UIButton.Configuration.bordered()
         viewConfig.title = "Yes"
-        viewConfig.baseBackgroundColor = .systemRed
         viewConfig.baseForegroundColor = .white
         let view = UIButton(configuration: viewConfig)
         view.translatesAutoresizingMaskIntoConstraints = false
         view.isUserInteractionEnabled = true
         view.layer.cornerRadius = 15
+        view.backgroundColor = .red
         return view
     }()
         
     private let priorityNoBtn = {
         var viewConfig = UIButton.Configuration.bordered()
         viewConfig.title = "No"
-        viewConfig.baseBackgroundColor = .systemRed
         viewConfig.baseForegroundColor = .white
         let view = UIButton(configuration: viewConfig)
         view.translatesAutoresizingMaskIntoConstraints = false
         view.isUserInteractionEnabled = true
+        view.backgroundColor = .red
         view.layer.cornerRadius = 15
         return view
     }()
@@ -124,77 +123,124 @@ class ProjectCreateView: UIView {
     private let diffEasyBtn = {
         var viewConfig = UIButton.Configuration.bordered()
         viewConfig.title = "Easy"
-        viewConfig.baseBackgroundColor = .systemGreen
         viewConfig.baseForegroundColor = .white
         let view = UIButton(configuration: viewConfig)
         view.translatesAutoresizingMaskIntoConstraints = false
         view.isUserInteractionEnabled = true
         view.layer.cornerRadius = 15
+        view.backgroundColor = .systemGreen
         return view
     }()
         
     private let diffMediumBtn = {
         var viewConfig = UIButton.Configuration.bordered()
         viewConfig.title = "Medium"
-        viewConfig.baseBackgroundColor = .systemOrange
         viewConfig.baseForegroundColor = .white
         let view = UIButton(configuration: viewConfig)
         view.translatesAutoresizingMaskIntoConstraints = false
         view.isUserInteractionEnabled = true
+        view.backgroundColor = .orange
         view.layer.cornerRadius = 15
         return view
     }()
     
-        
     private let diffHardBtn = {
         var viewConfig = UIButton.Configuration.bordered()
         viewConfig.title = "Hard"
-        viewConfig.baseBackgroundColor = .systemRed
         viewConfig.baseForegroundColor = .white
         let view = UIButton(configuration: viewConfig)
         view.translatesAutoresizingMaskIntoConstraints = false
         view.isUserInteractionEnabled = true
+        view.backgroundColor = .systemRed
         view.layer.cornerRadius = 15
         return view
     }()
-    
-    
-    @objc private func setPriorityYes(_ sender: Any) {
-        chosenPriority = true
-    } 
-    
-    @objc private func setPriorityNo(_ sender: Any) {
-        chosenPriority = false
-    }
-
-    @objc private func setDiffEasy(_ sender: Any) {
-        chosenDifficulty = "Easy"
-    }
-
-    @objc private func setDiffMedium(_ sender: Any) {
-        chosenDifficulty = "Medium"
-    }
-    
-    @objc private func setDiffHard(_ sender: Any) {
-        chosenDifficulty = "Hard"
-    }
-    
+      
     let datePickerView = {
         let view = UIDatePicker()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.datePickerMode = .date
         return view
     }()
+
+     
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        translatesAutoresizingMaskIntoConstraints = false
     
-    @objc private func setDeadline(_ sender: UIDatePicker) {
+        configBtns()
+        configDatePicker()
+        
+        addSubviews(datePickerView, nameLabel, nameTF, descriptionLabel, descritionTV, deadlineLabel, deadlineTV, priorityLabel, priorityYesBtn, priorityNoBtn, difficultyLabel, diffEasyBtn, diffMediumBtn, diffHardBtn)
+        addConstraints()
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    /// Add gesture recognizers to ui buttons
+    private func configBtns() {
+        priorityYesBtn.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(setPriorityYes(_ :))))
+        priorityNoBtn.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(setPriorityNo(_ :))))
+        diffEasyBtn.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(setDiffEasy(_ :))))
+        diffMediumBtn.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(setDiffMedium(_ :))))
+        diffHardBtn.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(setDiffHard(_ :))))
+    }
+    
+    /// Setup deadline text view date picker view
+    private func configDatePicker() {
+        datePickerView.addTarget(self, action: #selector(setDeadline), for: .valueChanged)
+        deadlineTV.text = datePickerView.date.formatted(date: .abbreviated, time: .omitted)
+        deadlineTV.inputView = datePickerView
+    }
+    
+    private func getDateFormatter() -> DateFormatter {
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .medium
         dateFormatter.timeStyle = .none
-        deadlineTV.text = dateFormatter.string(from: sender.date)
+        return dateFormatter
+    }
+    
+    @objc private func setDeadline(_ sender: UIDatePicker) {
+        deadlineTV.text = getDateFormatter().string(from: sender.date)
     }
     
     private var chosenPriority: Bool? = nil
     private var chosenDifficulty: String? = nil
+    
+    @objc private func setPriorityYes(_ sender: Any) {
+        priorityNoBtn.backgroundColor = .red
+        priorityYesBtn.backgroundColor = .systemBlue
+        chosenPriority = true
+    }
+    
+    @objc private func setPriorityNo(_ sender: Any) {
+        priorityNoBtn.backgroundColor = .systemBlue
+        priorityYesBtn.backgroundColor = .red
+        chosenPriority = false
+    }
+
+    @objc private func setDiffEasy(_ sender: Any) {
+        diffEasyBtn.backgroundColor = .systemBlue
+        diffMediumBtn.backgroundColor = .orange
+        diffHardBtn.backgroundColor = .red
+        chosenDifficulty = "Easy"
+    }
+
+    @objc private func setDiffMedium(_ sender: Any) {
+        diffEasyBtn.backgroundColor = .green
+        diffMediumBtn.backgroundColor = .systemBlue
+        diffHardBtn.backgroundColor = .red
+        chosenDifficulty = "Medium"
+    }
+    
+    @objc private func setDiffHard(_ sender: Any) {
+        diffEasyBtn.backgroundColor = .systemGreen
+        diffMediumBtn.backgroundColor = .orange
+        diffHardBtn.backgroundColor = .systemBlue
+        chosenDifficulty = "Hard"
+    }
     
     func canMoveNext() -> ProjectModel? {
         guard
@@ -207,24 +253,6 @@ class ProjectCreateView: UIView {
         }
         
         return ProjectModel(name: name, description: description, deadline: deadline, priority: priority, diff: difficulty, tasks: [], client: nil)
-    }
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        translatesAutoresizingMaskIntoConstraints = false
-        priorityYesBtn.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(setPriorityYes(_ :))))
-        priorityNoBtn.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(setPriorityNo(_ :))))
-        diffEasyBtn.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(setDiffEasy(_ :))))
-        diffMediumBtn.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(setDiffMedium(_ :))))
-        diffHardBtn.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(setDiffHard(_ :))))
-        datePickerView.addTarget(self, action: #selector(setDeadline), for: .valueChanged)
-        deadlineTV.inputView = datePickerView
-        addSubviews(datePickerView, nameLabel, nameTF, descriptionLabel, descritionTV, deadlineLabel, deadlineTV, priorityLabel, priorityYesBtn, priorityNoBtn, difficultyLabel, diffEasyBtn, diffMediumBtn, diffHardBtn)
-        addConstraints()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
     
     private func addConstraints() {
@@ -291,8 +319,7 @@ class ProjectCreateView: UIView {
             nameLabel.topAnchor.constraint(equalTo: topAnchor, constant: 10),
         
             datePickerView.centerXAnchor.constraint(equalTo: centerXAnchor),
-            datePickerView.topAnchor.constraint(equalTo: deadlineTV.topAnchor),
-            datePickerView.bottomAnchor.constraint(equalTo: deadlineTV.bottomAnchor)
+            datePickerView.centerYAnchor.constraint(equalTo: deadlineTV.centerYAnchor)
         ])
     }
     

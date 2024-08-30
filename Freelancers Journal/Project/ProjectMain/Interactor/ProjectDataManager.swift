@@ -9,8 +9,8 @@ import CoreData
 
 protocol ProjectDataManagerProtocol {
     // Interactor -> LocalDataManager
-    func getCompletedProjects(completion: @escaping (FjResult) -> Void)
-    func getUncompletedProjects(completion: @escaping (FjResult) -> Void)
+    func getCompletedProjects(completion: @escaping (FjProjectResult) -> Void)
+    func getUncompletedProjects(completion: @escaping (FjProjectResult) -> Void)
 
     func saveProject(project: ProjectModel) throws
     func deleteProject(project: Project)
@@ -21,21 +21,18 @@ protocol ProjectDataManagerResponseProtocol {
     func didGetCompletedProjects(_ projects: [Project])
     func didGetUncompletedProject(_ projects: [Project])
     
-    func didSaveProject()
-    func didDeleteProject()
-    func didToggleProjectIsComplete()
     func onError(_ error: Error)
 }
 
 class ProjectDataManager: ProjectDataManagerProtocol {
         
-    func getCompletedProjects(completion: @escaping (FjResult) -> Void) {
+    func getCompletedProjects(completion: @escaping (FjProjectResult) -> Void) {
         let fetchRequest: NSFetchRequest<Project> = Project.fetchRequest()
-//        let sortByDeadline = NSSortDescriptor(key: #keyPath(Project.deadline), ascending: true)
-//        let predicate = NSPredicate(format: "\(#keyPath(Project.completed)) == \(true)")
+        let sortByDeadline = NSSortDescriptor(key: #keyPath(Project.deadline), ascending: true)
+        let predicate = NSPredicate(format: "\(#keyPath(Project.completed)) == \(true)")
         
-//        fetchRequest.sortDescriptors = [sortByDeadline]
-//        fetchRequest.predicate = predicate
+        fetchRequest.sortDescriptors = [sortByDeadline]
+        fetchRequest.predicate = predicate
         
         guard let viewContext = CoreDataManager.persistentContainer else {
             print("failed to create core data")
@@ -47,17 +44,17 @@ class ProjectDataManager: ProjectDataManagerProtocol {
                 let projects = try viewContext.fetch(fetchRequest)
                 completion(.success(projects))
             } catch {
-                completion(.failure(error))
+                completion(.failure(FjError.failedToFetchCoreDataObject))
             }
         }
     }
-    func getUncompletedProjects(completion: @escaping (FjResult) -> Void) {
+    func getUncompletedProjects(completion: @escaping (FjProjectResult) -> Void) {
         let fetchRequest: NSFetchRequest<Project> = Project.fetchRequest()
-//        let sortByDeadline = NSSortDescriptor(key: #keyPath(Project.deadline), ascending: true)
-//        let predicate = NSPredicate(format: "\(#keyPath(Project.completed)) == \(false)")
+        let sortByDeadline = NSSortDescriptor(key: #keyPath(Project.deadline), ascending: true)
+        let predicate = NSPredicate(format: "\(#keyPath(Project.completed)) == \(false)")
         
-//        fetchRequest.sortDescriptors = [sortByDeadline]
-//        fetchRequest.predicate = predicate
+        fetchRequest.sortDescriptors = [sortByDeadline]
+        fetchRequest.predicate = predicate
         
         guard let viewContext = CoreDataManager.persistentContainer else {
             print("failed to create core data")
@@ -68,7 +65,7 @@ class ProjectDataManager: ProjectDataManagerProtocol {
                 let projects = try viewContext.fetch(fetchRequest)
                 completion(.success(projects))
             } catch {
-                completion(.failure(error))
+                completion(.failure(FjError.failedToFetchCoreDataObject))
             }
         }
     }
@@ -83,8 +80,8 @@ class ProjectDataManager: ProjectDataManagerProtocol {
         var newTaskList = [FjTask]()
         
         if let taskEntity = NSEntityDescription.entity(forEntityName: "FjTask", in: managedOC) {
-            let newTask = FjTask(entity: taskEntity, insertInto: managedOC)
             for pTask in project.tasks {
+                let newTask = FjTask(entity: taskEntity, insertInto: managedOC)
                 newTask.setValue(pTask.name, forKey: "name")
                 newTask.setValue(pTask.price, forKey: "price")
                 newTaskList.append(newTask)
@@ -136,12 +133,15 @@ class ProjectDataManager: ProjectDataManagerProtocol {
     }
     
     func toggleProjectIsComplete(project: Project, isComplete: Bool) {
-//        let context = CoreDataManager.persistentContainer.viewContext
-//        project.completed = isComplete
-//        do {
-//            try context.save()
-//        } catch {
-//            print("Failed to update project")
-//        }
+        guard let context = CoreDataManager.persistentContainer else {
+            print("failed to create core data")
+            return
+        }
+        project.completed = isComplete
+        do {
+            try context.save()
+        } catch {
+            print("Failed to update project")
+        }
     }
 }

@@ -24,8 +24,6 @@ protocol ProjectMainViewProtocol: AnyObject {
     
     func hideCompletedLoading()
     
-    func updateProjectList()
-    
     func showError(error: Error)
 }
 
@@ -40,14 +38,26 @@ class ProjectMainViewController: UIViewController, ProjectMainViewDelegate {
         projectMainView.delegate = self
         setupView(projectMainView)
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        projectMainView.selectInProgressBtn()
+        presenter?.viewDidLoad()
+    }
     
     func navigateToCreateProject() {
         presenter?.router?.createProjectCreateModule(from: self)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-        presenter?.viewDidLoad()
+    func createProjectDetailsModule(for project: Project) {
+        presenter?.router?.createProjectDetailsModule(from: self, for: project)
+    }
+    
+    func showCompletedProjects() {
+        presenter?.interactor?.getCompletedProjects()
+    }
+    
+    func showInProgressProjects() {
+        presenter?.interactor?.getUncompletedProjects()
     }
     
 }
@@ -55,13 +65,7 @@ class ProjectMainViewController: UIViewController, ProjectMainViewDelegate {
 extension ProjectMainViewController: ProjectMainViewProtocol {
    
     func showUncompletedProjects(with projects: [Project]) {
-        print("got uncompleted project \(projects.count)")
-        projects.forEach({ pro in
-            print("name: \(pro.name!)")
-        })
-        if !projects.isEmpty {
-            projectMainView.configureCollectionView(with: projects)
-        }
+        projectMainView.configureCollectionView(with: projects)
     }
     
     func showUncompletedLoading() {
@@ -73,10 +77,7 @@ extension ProjectMainViewController: ProjectMainViewProtocol {
     }
     
     func showCompletedProjects(with projects: [Project]) {
-        print("got completed project \(projects.count)")
-        if !projects.isEmpty {
-            projectMainView.configureCollectionView(with: projects)
-        }
+        projectMainView.configureCollectionView(with: projects)
     }
     
     func showCompletedLoading() {
@@ -85,10 +86,6 @@ extension ProjectMainViewController: ProjectMainViewProtocol {
     
     func hideCompletedLoading() {
         // not implemented
-    }
-    
-    func updateProjectList() {
-        // jhjhkjjh
     }
     
     func showError(error: any Error) {
