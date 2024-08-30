@@ -68,6 +68,13 @@
 		75F82C5D2C82694600EE060A /* Clientnteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F82C5C2C82694600EE060A /* Clientnteractor.swift */; };
 		75F82C602C826BAF00EE060A /* FjClientResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F82C5F2C826BAF00EE060A /* FjClientResult.swift */; };
 		75F82C622C826C6C00EE060A /* ClientDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F82C612C826C6C00EE060A /* ClientDataManager.swift */; };
+		75F82C692C827DDC00EE060A /* StatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F82C682C827DDC00EE060A /* StatisticsView.swift */; };
+		75F82C6B2C827ED800EE060A /* StatisticsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F82C6A2C827ED800EE060A /* StatisticsViewCell.swift */; };
+		75F82C6E2C82805B00EE060A /* StatisticsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F82C6D2C82805B00EE060A /* StatisticsModel.swift */; };
+		75F82C702C82821200EE060A /* StatisticsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F82C6F2C82821200EE060A /* StatisticsInteractor.swift */; };
+		75F82C722C8282CD00EE060A /* StatisticsDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F82C712C8282CD00EE060A /* StatisticsDataManager.swift */; };
+		75F82C742C8285C600EE060A /* StatisticsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F82C732C8285C600EE060A /* StatisticsPresenter.swift */; };
+		75F82C762C82870300EE060A /* StatisticsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F82C752C82870300EE060A /* StatisticsRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -134,6 +141,13 @@
 		75F82C5C2C82694600EE060A /* Clientnteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clientnteractor.swift; sourceTree = "<group>"; };
 		75F82C5F2C826BAF00EE060A /* FjClientResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FjClientResult.swift; sourceTree = "<group>"; };
 		75F82C612C826C6C00EE060A /* ClientDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientDataManager.swift; sourceTree = "<group>"; };
+		75F82C682C827DDC00EE060A /* StatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsView.swift; sourceTree = "<group>"; };
+		75F82C6A2C827ED800EE060A /* StatisticsViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewCell.swift; sourceTree = "<group>"; };
+		75F82C6D2C82805B00EE060A /* StatisticsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsModel.swift; sourceTree = "<group>"; };
+		75F82C6F2C82821200EE060A /* StatisticsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsInteractor.swift; sourceTree = "<group>"; };
+		75F82C712C8282CD00EE060A /* StatisticsDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsDataManager.swift; sourceTree = "<group>"; };
+		75F82C732C8285C600EE060A /* StatisticsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsPresenter.swift; sourceTree = "<group>"; };
+		75F82C752C82870300EE060A /* StatisticsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,10 +180,10 @@
 		750E3DB72C808EE900D0E9DD /* Freelancers Journal */ = {
 			isa = PBXGroup;
 			children = (
+				750E3DDC2C809D7600D0E9DD /* Application */,
 				750E3DE12C809EC500D0E9DD /* Settings */,
 				750E3DE02C809EBD00D0E9DD /* Client */,
 				750E3DDF2C809EB200D0E9DD /* Statistics */,
-				750E3DDC2C809D7600D0E9DD /* Application */,
 				750E3DD42C809BC900D0E9DD /* Common */,
 				750E3DCD2C808F2C00D0E9DD /* Project */,
 				750E3DCC2C808F0E00D0E9DD /* Onboarding */,
@@ -237,7 +251,11 @@
 		750E3DDF2C809EB200D0E9DD /* Statistics */ = {
 			isa = PBXGroup;
 			children = (
-				750E3DE62C809EE500D0E9DD /* StatisticsViewController.swift */,
+				75F82C6C2C82804F00EE060A /* Entities */,
+				75F82C672C82782E00EE060A /* Router */,
+				75F82C652C82780900EE060A /* Presenter */,
+				75F82C642C82780300EE060A /* Interactor */,
+				75F82C632C8277FF00EE060A /* View */,
 			);
 			path = Statistics;
 			sourceTree = "<group>";
@@ -560,6 +578,49 @@
 			path = Entities;
 			sourceTree = "<group>";
 		};
+		75F82C632C8277FF00EE060A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				750E3DE62C809EE500D0E9DD /* StatisticsViewController.swift */,
+				75F82C682C827DDC00EE060A /* StatisticsView.swift */,
+				75F82C6A2C827ED800EE060A /* StatisticsViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		75F82C642C82780300EE060A /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				75F82C6F2C82821200EE060A /* StatisticsInteractor.swift */,
+				75F82C712C8282CD00EE060A /* StatisticsDataManager.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		75F82C652C82780900EE060A /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				75F82C732C8285C600EE060A /* StatisticsPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		75F82C672C82782E00EE060A /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				75F82C752C82870300EE060A /* StatisticsRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		75F82C6C2C82804F00EE060A /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				75F82C6D2C82805B00EE060A /* StatisticsModel.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -631,6 +692,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				750E3DFD2C80D7E600D0E9DD /* ProjectCreateView.swift in Sources */,
+				75F82C692C827DDC00EE060A /* StatisticsView.swift in Sources */,
 				750E3DB92C808EE900D0E9DD /* AppDelegate.swift in Sources */,
 				750E3DF22C80CFC300D0E9DD /* ProjectMainViewCell.swift in Sources */,
 				750E3E002C80DCAC00D0E9DD /* ProjectTaskViewController.swift in Sources */,
@@ -639,6 +701,7 @@
 				750E3E512C813D9500D0E9DD /* TaskModel.swift in Sources */,
 				75F82C4B2C8208B300EE060A /* Project+CoreDataClass.swift in Sources */,
 				75F82C4C2C8208B300EE060A /* Project+CoreDataProperties.swift in Sources */,
+				75F82C6E2C82805B00EE060A /* StatisticsModel.swift in Sources */,
 				750E3E392C8110C500D0E9DD /* ClientPresenter.swift in Sources */,
 				750E3DF02C80CB4100D0E9DD /* ProjectMainView.swift in Sources */,
 				750E3DE52C809EDC00D0E9DD /* ClientViewController.swift in Sources */,
@@ -650,6 +713,8 @@
 				750E3E602C81C91B00D0E9DD /* FjError.swift in Sources */,
 				750E3DE72C809EE500D0E9DD /* StatisticsViewController.swift in Sources */,
 				750E3E242C80E67600D0E9DD /* ProjectMainRouter.swift in Sources */,
+				75F82C722C8282CD00EE060A /* StatisticsDataManager.swift in Sources */,
+				75F82C6B2C827ED800EE060A /* StatisticsViewCell.swift in Sources */,
 				75F82C622C826C6C00EE060A /* ClientDataManager.swift in Sources */,
 				750E3E362C80F03F00D0E9DD /* ClientRouter.swift in Sources */,
 				750E3DFB2C80D79100D0E9DD /* ProjectCreateViewController.swift in Sources */,
@@ -659,6 +724,7 @@
 				750E3E402C81144900D0E9DD /* ClientCreateRouter.swift in Sources */,
 				750E3DD92C809C4B00D0E9DD /* OnboardingView.swift in Sources */,
 				750E3E492C811FED00D0E9DD /* ProjectDetailsViewController.swift in Sources */,
+				75F82C702C82821200EE060A /* StatisticsInteractor.swift in Sources */,
 				75F82C442C8201CB00EE060A /* FjCoreData.xcdatamodeld in Sources */,
 				750E3E562C81619B00D0E9DD /* FjCoreDataManager.swift in Sources */,
 				750E3E2F2C80EB8700D0E9DD /* ProjectCreateRouter.swift in Sources */,
@@ -676,6 +742,7 @@
 				750E3DED2C80A7E700D0E9DD /* SecondOnboardingViewCell.swift in Sources */,
 				750E3E262C80E82000D0E9DD /* ProjectMainPresenter.swift in Sources */,
 				750E3E142C80E24A00D0E9DD /* ClientView.swift in Sources */,
+				75F82C742C8285C600EE060A /* StatisticsPresenter.swift in Sources */,
 				750E3E312C80EE5900D0E9DD /* ProjectTaskRouter.swift in Sources */,
 				750E3E0C2C80DDD100D0E9DD /* ProjectTaskViewCell.swift in Sources */,
 				750E3E542C815E3B00D0E9DD /* ClientModel.swift in Sources */,
@@ -685,6 +752,7 @@
 				750E3E1E2C80E4E900D0E9DD /* ClientCreateView.swift in Sources */,
 				750E3DBB2C808EE900D0E9DD /* SceneDelegate.swift in Sources */,
 				75F82C532C8208ED00EE060A /* Client+CoreDataClass.swift in Sources */,
+				75F82C762C82870300EE060A /* StatisticsRouter.swift in Sources */,
 				75F82C542C8208ED00EE060A /* Client+CoreDataProperties.swift in Sources */,
 				750E3DDB2C809C8000D0E9DD /* FjIsNewUser.swift in Sources */,
 				750E3DE32C809ED300D0E9DD /* SettingsViewController.swift in Sources */,

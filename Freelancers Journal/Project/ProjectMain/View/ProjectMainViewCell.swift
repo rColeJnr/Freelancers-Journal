@@ -41,7 +41,7 @@ class ProjectMainViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         contentView.addSubviews(name, date, price)
-        contentView.backgroundColor = .systemBlue
+        contentView.backgroundColor = appColor()
         contentView.layer.cornerRadius = 15
         addConstraints()
     }
@@ -54,18 +54,15 @@ class ProjectMainViewCell: UICollectionViewCell {
         NSLayoutConstraint.activate([
             
             price.heightAnchor.constraint(equalToConstant: 30),
-//            price.widthAnchor.constraint(equalToConstant: 150),
             price.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
             price.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant:-10),
             
             name.heightAnchor.constraint(equalToConstant: 30),
             name.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 5),
-//            name.trailingAnchor.constraint(equalTo: price.leadingAnchor),
             name.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
             
             date.heightAnchor.constraint(equalToConstant: 30),
             date.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -5),
-//            date.trailingAnchor.constraint(equalTo: price.leadingAnchor),
             date.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
             
         ])

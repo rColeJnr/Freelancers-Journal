@@ -22,7 +22,7 @@ class ProjectCreateView: UIView {
     private let nameTF = {
         let view = UITextField()
         view.font = .systemFont(ofSize: 20, weight: .medium)
-        view.backgroundColor = .systemBlue
+        view.backgroundColor = .systemTeal
         view.textColor = .white
         view.textAlignment = .left
         view.layer.cornerRadius = 15
@@ -44,7 +44,7 @@ class ProjectCreateView: UIView {
         let view = UITextView()
         view.isEditable = true
         view.font = .systemFont(ofSize: 20, weight: .medium)
-        view.backgroundColor = .systemBlue
+        view.backgroundColor = .systemTeal
         view.textColor = .white
         view.textAlignment = .left
         view.layer.cornerRadius = 15
@@ -68,7 +68,7 @@ class ProjectCreateView: UIView {
         view.isEditable = false
         view.isUserInteractionEnabled = false
         view.font = .systemFont(ofSize: 20, weight: .medium)
-        view.backgroundColor = .systemBlue
+        view.backgroundColor = .systemTeal
         view.textColor = .white
         view.textAlignment = .center
         view.layer.cornerRadius = 15

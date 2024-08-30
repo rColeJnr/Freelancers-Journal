@@ -16,7 +16,7 @@ class FjTabBarController: UITabBarController {
     
     private func setupTabs() {
         let projectVc = ProjectMainRouter().createModule()
-        let statisticsVc = StatisticsViewController()
+        let statisticsVc = StatisticsRouter().createModule()
         let clientsVc = ClientRouter().createModule(for: nil)
         let settingsVc = SettingsViewController()
         
@@ -36,8 +36,18 @@ class FjTabBarController: UITabBarController {
         settingsNav.tabBarItem = UITabBarItem(title: "Settings", image: UIImage(systemName: "gear"), tag: 4)
         
         setViewControllers([projectNav, statisticsNav, clientsNav, settingsNav], animated: true)
-        tabBar.backgroundColor = .systemBackground
+
+        tabBar.backgroundColor = appColor()
         
     }
     
+}
+
+// Пожалуйста игноруй это
+func appColor() -> UIColor {
+    let rgbValue = 0x3B2B4C
+    let r = CGFloat((rgbValue & 0xFF0000) >> 16)/255.0
+    let g = CGFloat((rgbValue & 0xFF00) >> 8)/255.0
+    let b = CGFloat((rgbValue & 0xFF))/255.0
+    return UIColor(red:r, green: g, blue: b, alpha: 1.0)
 }

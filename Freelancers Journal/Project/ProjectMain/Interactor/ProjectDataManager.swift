@@ -48,6 +48,7 @@ class ProjectDataManager: ProjectDataManagerProtocol {
             }
         }
     }
+    
     func getUncompletedProjects(completion: @escaping (FjProjectResult) -> Void) {
         let fetchRequest: NSFetchRequest<Project> = Project.fetchRequest()
         let sortByDeadline = NSSortDescriptor(key: #keyPath(Project.deadline), ascending: true)
